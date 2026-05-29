@@ -1,0 +1,109 @@
+@use "sass:math";
+
+@property --root-font-size {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 16px;
+}
+
+// ローカルフォントのNoto sans JPを優先して使用するためのフォントファイルを読み込む
+@font-face {
+  font-family: "Local Noto Sans JP";
+  src: local("Noto Sans JP");
+}
+
+:root {
+  /* inner */
+  --inner: min(1024px, 100%);
+  --padding-inner: 17px;
+
+  /* z-index */
+  --z-index-header: 900;
+  --z-index-header-drawer: 910;
+  --z-index-header-drawer-icon: 920;
+  --z-index-overlay: 930;
+
+  /* タイトル・リード文 */
+  --fs-mv-main-title: clamp(3rem, 1.944rem + 4.51vw, 6rem);
+  --fs-mv-sub-title: clamp(0.75rem, 0.486rem + 1.13vw, 1.5rem);
+  --fs-msg-lead-keyword: clamp(1.5rem, 1.148rem + 1.5vw, 2.5rem);
+  --fs-msg-lead-text: clamp(1rem, 0.56rem + 1.88vw, 2.25rem);
+  --fs-section-en-title: clamp(5rem, 3.768rem + 5.26vw, 8.5rem);
+  --fs-section-ja-title: clamp(2rem, 1.56rem + 1.88vw, 3.25rem);
+  --fs-card-ja-title: clamp(1.5rem, 1.324rem + 0.75vw, 2rem);
+
+  /*  spカンプなし */
+  --fs-hero-en-title: ;
+  --fs-hero-ja-title: ;
+  --fs-hero-lead: ;
+
+  /* 各種イージング */
+  --ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+  --ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+
+  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+
+  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+  --ease-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* color */
+  --color-black: #222222;
+  --color-primary: #988c2c;
+  --color-secondary: #afa86f;
+  --color-white: #faf7f1;
+  --color-bg: #ffffff;
+
+  /* font-weight */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* font-family */
+  --base-font-family: "Noto Sans JP", sans-serif;
+  --title-font-family: "Viga", sans-serif;
+  --en-font-family: "Poppins", sans-serif;
+
+  // 16pxを基準として、1pxあたりのremを計算
+  --to-rem: calc(tan(atan2(1px, var(--root-font-size))) * 1rem);
+
+  /* ハーフ・レディングを打ち消すマイナス値を定義 */
+  --leading-trim: calc((1em - 1lh) / 2);
+
+  // how to use
+  // font-size: calc(16 * var(--to-rem));
+
+  /* transition duration */
+  --duration: 0.3s;
+
+  /* header height */
+  --header-height: 118px;
+
+  @media (max-width: 768px) {
+    --header-height: 46px;
+  }
+}
