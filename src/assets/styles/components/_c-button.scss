@@ -1,47 +1,58 @@
 @use "../global" as *;
 
 .c-button {
-  position: relative;
-  display: inline-block;
-  padding: calc(14 * var(--to-rem)) calc(60 * var(--to-rem));
-  border: 1px solid currentcolor;
-  background-color: var(--color-white);
-  color: var(--color-black);
-  font-size: calc(15 * var(--to-rem));
-  line-height: 1.2;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  --_padding-y: calc(14 * var(--to-rem));
+  --_padding-x: calc(35 * var(--to-rem));
+  --_padding-x--lg: calc(96 * var(--to-rem));
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: calc(20 * var(--to-rem));
-    width: calc(8 * var(--to-rem));
-    height: calc(8 * var(--to-rem));
-    border-top: 2px solid var(--color-black);
-    border-right: 2px solid var(--color-black);
-    translate: 0 -50%;
-    rotate: 45deg;
-    transition:
-      rotate 0.3s,
-      translate 0.3s;
+  display: inline-grid;
+  place-content: center;
+  padding: var(--_padding-y) var(--_padding-x);
+  transition: background var(--duration) var(--ease-in-sine);
+}
+
+.c-button__link {
+  font-size: calc(14 * var(--to-rem));
+  font-weight: var(--fw-bold);
+  color: var(--color-white);
+  line-height: calc(100 / 100);
+  text-transform: uppercase;
+}
+
+/* エントリーボタン */
+.c-button--primary {
+  background: var(--color-secondary);
+
+  &:focus-visible {
+    background: oklch(from var(--color-secondary) l c h / 0.8);
   }
 
   @media (any-hover: hover) {
-    &:hover::before {
-      translate: 5px -50%;
+    &:hover {
+      background: oklch(from var(--color-secondary) l c h / 0.8);
     }
   }
 }
 
-.c-button[data-color="black"] {
-  border-color: var(--color-black);
-  background-color: var(--color-black);
-  color: var(--color-white);
+/* 募集要項ボタン */
+.c-button--secondary {
+  background: var(--color-black);
 
-  &::before {
-    border-top: 2px solid currentcolor;
-    border-right: 2px solid currentcolor;
+    &:focus-visible {
+    background: oklch(from var(--color-black) l c h / 0.8);
   }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: oklch(from var(--color-black) l c h / 0.8);
+    }
+  }
+}
+
+/* 矢印付ボタン */
+.c-button--wide {
+}
+
+.c-button--lg {
+  padding-inline: var(--_padding-x--lg);
 }

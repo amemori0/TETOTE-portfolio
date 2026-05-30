@@ -1,5 +1,7 @@
 @use "sass:math";
 
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Viga&family=Poppins:wght@400;500;700&display=swap");
+
 @property --root-font-size {
   syntax: "<length>";
   inherits: false;
@@ -18,10 +20,9 @@
   --padding-inner: 17px;
 
   /* z-index */
-  --z-index-header: 900;
+  --z-index-header: 930;
   --z-index-header-drawer: 910;
   --z-index-header-drawer-icon: 920;
-  --z-index-overlay: 930;
 
   /* タイトル・リード文 */
   --fs-mv-main-title: clamp(3rem, 1.944rem + 4.51vw, 6rem);
@@ -74,8 +75,8 @@
   --color-black: #222222;
   --color-primary: #988c2c;
   --color-secondary: #afa86f;
-  --color-white: #faf7f1;
-  --color-bg: #ffffff;
+  --color-off-white: #faf7f1;
+  --color-white: #ffffff;
 
   /* font-weight */
   --fw-light: 300;
@@ -101,7 +102,7 @@
   --duration: 0.3s;
 
   /* header height */
-  --header-height: 118px;
+  --header-height: 87px;
 
   @media (max-width: 768px) {
     --header-height: 46px;

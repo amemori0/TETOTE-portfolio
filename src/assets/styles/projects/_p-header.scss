@@ -1,1 +1,262 @@
 @use "../global" as *;
+
+.p-header {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: auto;
+  z-index: var(--z-index-header);
+  padding: calc(26 * var(--to-rem)) calc(30 * var(--to-rem));
+}
+
+.p-header__inner {
+  display: grid;
+  grid-template-columns: calc(250 * var(--to-rem)) minmax(0, 1fr);
+  align-items: center;
+}
+
+.p-header__logo {
+  width: min(calc(250 * var(--to-rem)), 100%);
+  height: auto;
+
+  @include mq(md) {
+    width: min(calc(154 * var(--to-rem)), 100%);
+  }
+}
+
+.p-header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  column-gap: calc(49 * var(--to-rem));
+}
+
+.p-header__button-warp {
+  display: flex;
+  column-gap: calc(22 * var(--to-rem));
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+// ----------------------------------------
+// ドロワーボタン
+// ----------------------------------------
+
+.p-header__drawer-icon {
+  --_icon-drawer-size: calc(52 * var(--to-rem));
+  @include mq(md) {
+    --_icon-drawer-size: calc(32 * var(--to-rem));
+  }
+
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(15 * var(--to-rem));
+  width: var(--_icon-drawer-size);
+  height: auto;
+
+  @media (any-hover: hover) {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.p-header__drawer-icon--bar {
+  width: 100%;
+  height: 2px;
+  background: var(--color-white);
+  transition:
+    rotate var(--duration) var(--ease-out-sine),
+    translate var(--duration) var(--ease-out-sine),
+    opacity var(--duration) var(--ease-out-sine);
+}
+
+.p-header__drawer-icon.js-open {
+  .p-header__drawer-icon--bar:nth-of-type(1) {
+    rotate: 45deg;
+    translate: 0 calc(15 * var(--to-rem) + 2px);
+  }
+
+  .p-header__drawer-icon--bar:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .p-header__drawer-icon--bar:nth-of-type(3) {
+    rotate: -45deg;
+    translate: 0 calc((15 * var(--to-rem) + 2px) * -1);
+  }
+}
+
+/* ドロワーボタンを押したら色を変更 */
+.p-header.js-open {
+  .p-header__logo path {
+    fill: var(--color-black);
+  }
+
+  .p-header__drawer-icon--bar {
+    background: var(--color-black);
+  }
+
+  .p-header__drawer-icon-text {
+    display: none;
+  }
+}
+
+.p-header__drawer-icon-text {
+  font-size: calc(12 * var(--to-rem));
+  font-family: var(--title-font-family);
+  line-height: calc(100 / 100);
+  color: var(--color-white);
+  text-transform: uppercase;
+  text-align: center;
+
+  @include mq(md) {
+    font-size: calc(10 * var(--to-rem));
+  }
+}
+
+// ----------------------------------------
+// ドロワーメニュー
+// ----------------------------------------
+
+.p-header__drawer {
+  position: fixed;
+  display: grid;
+  place-content: center;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  padding-block-start: calc(90 * var(--to-rem));
+  width: 100%;
+  height: 100vh;//svhが対応していないブラウザがあった場合の対策
+  height: 100svh;
+  overflow-y: scroll;
+  z-index: var(--z-index-header-drawer);
+  background: var(--color-off-white);
+  opacity: 0;
+  visibility: hidden;
+  translate: 100% 0;
+  transition:
+    translate var(--duration) var(--ease-out-sine),
+    opacity var(--duration) var(--ease-out-sine),
+    visibility var(--duration);
+
+  &.js-open {
+    opacity: 1;
+    translate: 0 0;
+    visibility: visible;
+  }
+
+  @include mq(md) {
+    place-content: start;
+  }
+}
+
+.p-header__drawer-inner {
+  display: grid;
+  grid-template-columns: calc(250 * var(--to-rem)) minmax(0, 1fr);
+  align-items: center;
+
+  width: min(calc(903 * var(--to-rem) + 12 * var(--to-rem) * 2), 100%);
+  padding-inline: calc(12 * var(--to-rem));
+  margin-inline: auto;
+}
+
+.p-header__drawer-logo {
+  width: min(calc(250 * var(--to-rem)), 100%);
+  height: auto;
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.p-header__drawer-nav {
+  margin-inline-start: calc(63 * var(--to-rem));
+
+  @include mq(md) {
+    margin: 0;
+  }
+}
+
+.p-header__drawer-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: calc(30 * var(--to-rem));
+
+  /* border */
+  padding-inline-start: calc(63 * var(--to-rem));
+  border-inline-start: 1px solid var(--color-secondary);
+
+  @include mq(md) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    /* borderの削除 */
+    padding: 0;
+    border: none;
+  }
+}
+
+.p-header__drawer-item {
+  /* border */
+  padding-block: calc(23 * var(--to-rem));
+  border-block-start: 1px solid var(--color-secondary);
+  border-block-end: 1px solid var(--color-secondary);
+
+  @include mq(md) {
+    padding-block: calc(13 * var(--to-rem));
+  }
+}
+
+.p-header__drawer-item-texts {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(11 * var(--to-rem));
+  transition: opacity var(--duration) var(--ease-in-sine);
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  @include mq(md) {
+    row-gap: calc(9 * var(--to-rem));
+  }
+}
+
+.p-header__drawer-item-text--en {
+  font-size: calc(32 * var(--to-rem));
+  font-family: var(--title-font-family);
+  line-height: calc(100 / 100);
+  text-transform: uppercase;
+
+  @include mq(md) {
+    font-size: calc(18 * var(--to-rem));
+  }
+}
+
+.p-header__drawer-item-text--ja {
+  font-size: calc(16 * var(--to-rem));
+  line-height: calc(100 / 100);
+  font-weight: var(--fw-bold);
+
+  @include mq(md) {
+    font-size: calc(12 * var(--to-rem));
+  }
+}
+.p-header__drawer-bottom {
+  --_drawer-bottom-padding: calc(40 * var(--to-rem));
+
+  display: flex;
+  column-gap: calc(30 * var(--to-rem));
+  margin-block-start: calc(50 * var(--to-rem));
+  padding-block-end: var(--_drawer-bottom-padding);
+
+  @media (max-width: 860px) {
+    flex-direction: column;
+    margin-block-start: calc(53 * var(--to-rem));
+    row-gap: calc(13 * var(--to-rem));
+  }
+}
