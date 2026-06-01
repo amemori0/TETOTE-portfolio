@@ -5,32 +5,30 @@
 ?>
 <section class="p-mv">
   <div class="p-mv__inner">
-    <div class="p-mv__title-wrap">
-      <h2 class="p-mv__main-title">メインタイトル</h2>
-      <p class="p-mv__sub-title">
-        ここにサブタイトルが入ります。<br />ここにサブタイトルが入ります。ここにサブタイトルが入ります。<br />ここにサブタイトルが入ります。
-      </p>
-    </div>
-    <div class="p-mv__splide splide js-mv-splide" aria-label="main-visual">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide">
-            <div class="splide__slide-image">
-              <img src="<?php echo esc_url(get_theme_file_uri("/assets/images/image_mv_01.webp")); ?>" width="977" height="1800" alt="" fetchpriority="high" />
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="splide__slide-image">
-              <img src="<?php echo esc_url(get_theme_file_uri("/assets/images/image_mv_02.webp")); ?>" width="977" height="1800" alt="" />
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="splide__slide-image">
-              <img src="<?php echo esc_url(get_theme_file_uri("/assets/images/image_mv_03.webp")); ?>" width="977" height="1800" alt="" />
-            </div>
-          </li>
-        </ul>
-      </div>
+  <div class="p-mv__img">
+    <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/image_mv_01.webp')); ?>" alt="" width="1440" height="823" fetchpriority="high">
+    <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/image_mv_02.webp')); ?>" alt="" width="1440" height="823">
+  </div>
+  <h1 class="p-mv__title">
+    <span class="u-text__block">Become a</span>
+    <span>Challenger.</span>
+  </h1>
+  <h2 class="p-mv__sub-title">君の挑戦が、意思が、未来を変える</h2>
+  
+  <div class="p-mv__new__banner">
+    <a href="#" class="c-news-banner">
+      <span class="c-news-banner__label">News</span>
+      <span class="c-news-banner__text">
+        <p class="c-news-banner__text-inner">最新のブログを wordpress で実装</p>
+      </span>
+      <span class="c-news-banner__action">
+        View more
+        <span class="u-sr-only">採用ブログへ</span>
+        <svg aria-hidden="true" focusable="false" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.20149 0L1.79852 1.40277L5.39567 4.99992L1.79852 8.59723L3.20149 10L8.20149 4.99992L3.20149 0Z" fill="#222222"/>
+        </svg>
+      </span>
+    </a>
     </div>
   </div>
 </section>

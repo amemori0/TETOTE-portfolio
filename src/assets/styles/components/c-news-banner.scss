@@ -1,0 +1,87 @@
+@use "../global" as *;
+
+.c-news-banner {
+  --_padding-y: calc(17 * var(--to-rem));
+  --_padding-x-r: calc(60 * var(--to-rem));
+  --_padding-x-l: calc(47 * var(--to-rem));
+
+  @include mq(md) {
+    --_padding-y: calc(19 * var(--to-rem));
+    --_padding-x-r: calc(12 * var(--to-rem));
+    --_padding-x-l: calc(10 * var(--to-rem));
+  }
+
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) auto;
+  align-items: stretch;
+  padding-inline-end: var(--_padding-x-l);
+  border-radius: calc(1px / 0);
+  overflow: hidden;
+  background: var(--color-white);
+  transition: background var(--duration) var(--ease-in-sine);
+
+  &:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 4px;
+    background: oklch(from var(--color-white) l c h / 0.8);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: oklch(from var(--color-white) l c h / 0.8);
+    }
+  }
+}
+
+.c-news-banner__label {
+  display: flex;
+  align-items: center;
+  padding-block: var(--_padding-y);
+  padding-inline: var(--_padding-x-r) var(--_padding-x-l);
+  background: var(--color-black);
+
+  font-size: calc(24 * var(--to-rem));
+  font-family: var(--title-font-family);
+  line-height: calc(100 / 100);
+  color: var(--color-white);
+
+  @include mq(md) {
+    font-size: calc(10 * var(--to-rem));
+  }
+}
+
+.c-news-banner__text {
+  display: flex;
+  align-items: center;
+  padding-inline-start: clamp(calc(10 * var(--to-rem)), 7cqi, calc(90 * var(--to-rem)));
+  font-size: calc(16 * var(--to-rem));
+  line-height: calc(100 / 100);
+
+  @include mq(md) {
+    font-size: calc(12 * var(--to-rem));
+  }
+}
+
+.c-news-banner__text-inner {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.c-news-banner__action {
+  --_content-padding: calc(20 * var(--to-rem));
+
+  display: flex;
+  align-items: center;
+  column-gap: calc(6 * var(--to-rem));
+  padding-inline-start: var(--_content-padding);
+
+  font-size: calc(14 * var(--to-rem));
+  font-family: var(--title-font-family);
+  line-height: calc(100 / 100);
+  @include mq(md) {
+    display: none;
+  }
+}

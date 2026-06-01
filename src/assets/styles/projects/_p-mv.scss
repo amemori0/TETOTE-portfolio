@@ -2,87 +2,120 @@
 
 .p-mv {
   position: relative;
-  z-index: 1;
   width: 100%;
-  height: max(100svh, calc(450 * var(--to-rem)));
-
-  @include mq(md) {
-    height: max(calc(500 * var(--to-rem)), 100%);
-  }
+  height: 100svh;
 }
 
 .p-mv__inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: inherit;
-}
-
-.p-mv__title-wrap {
   position: absolute;
   inset: 0;
-  z-index: 2;
-  container-type: inline-size;
-  display: flex;
-  flex-direction: column;
-  gap: calc(24 * var(--to-rem));
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  margin: auto;
-  padding-inline: var(--padding-inner);
-  color: var(--color-white);
-  text-align: center;
+  height: 100%;
 }
 
-.p-mv__main-title {
-  font-size: calc(32 * var(--to-rem));
-  font-weight: var(--fw-bold);
-  line-height: 1.2;
-  letter-spacing: 0.05em;
-  text-shadow: 0 2px 4px oklch(from var(--color-black) l c h / 30%);
+.p-mv__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-black);
+}
+
+.p-mv__img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-mv__img img:first-child{
+  @include mq(md) {
+    object-position: 70% top;
+  }
+}
+
+/* 画像の切り替えアニメーション */
+.p-mv__img img:nth-of-type(odd) {
+  animation: crossfade 8s infinite;
+}
+
+.p-mv__img img:nth-of-type(even) {
+  animation: crossfade 8s infinite 4s; // 半分ずらす
+}
+
+.p-mv__title {
+  position: absolute;
+  inset-block-end: calc(307 * var(--to-rem));
+  inset-inline-start: calc(66 * var(--to-rem));
+
+  font-size: var(--fs-mv-main-title);
+  font-family: var(--title-font-family);
+  color: var(--color-white);
+  line-height: calc(120 / 100);
+  text-transform: uppercase;
+  text-shadow: 0px 4px 4px oklch(0 0 0 / 0.25);
 
   @include mq(md) {
-    font-size: clamp(calc(32 * var(--to-rem)), 5cqi, calc(64 * var(--to-rem)));
+    inset-block-end: calc(137 * var(--to-rem));
+    inset-inline-start: calc(12 * var(--to-rem));
   }
 }
 
 .p-mv__sub-title {
-  font-size: calc(18 * var(--to-rem));
-  line-height: 1.6;
-  text-shadow: 0 1px 2px oklch(from var(--color-black) l c h / 30%);
+  --_padding-y: calc(17 * var(--to-rem));
+  --_padding-x: calc(66 * var(--to-rem));
+  --_slant-width: calc(30 * var(--to-rem));
 
   @include mq(md) {
-    font-size: clamp(calc(18 * var(--to-rem)), 3cqi, calc(24 * var(--to-rem)));
+    --_padding-y: calc(9 * var(--to-rem));
+    --_padding-x: calc(12 * var(--to-rem));
+  }
+
+  position: absolute;
+  inset-block-end: calc(163 * var(--to-rem));
+  font-size: var(--fs-mv-sub-title);
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+  color: var(--color-white);
+  /* シェイプ */
+  padding: var(--_padding-y) calc(var(--_padding-x) + var(--_slant-width)) var(--_padding-y) var(--_padding-x);
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--_slant-width)) 100%, 0 100%);
+  background: var(--color-black);
+
+  @include mq(md) {
+      inset-block-end: calc(89 * var(--to-rem));
   }
 }
 
-.p-mv__splide {
-  width: 100%;
-  height: 100%;
+.p-mv__new__banner {
+  position: absolute;
+  inset-block-end: calc(38 * var(--to-rem));
+  inset-inline-start: calc(71 * var(--to-rem));
+  width: min(calc(1263 * var(--to-rem)), calc(100% - calc(71 * var(--to-rem))));
+  padding-inline: calc(12 * var(--to-rem));
+
+  @include mq(md) {
+    inset-inline-start: 0;
+    inset-block-end: calc(10 * var(--to-rem));
+  }
 }
 
-.p-mv__splide .splide__track {
-  height: 100%;
-}
-
-.p-mv__splide .splide__list {
-  height: 100%;
-}
-
-.p-mv__splide .splide__slide {
-  height: 100%;
-}
-
-.p-mv__splide .splide__slide-image {
-  width: 100%;
-  height: 100%;
-}
-
-.p-mv__splide .splide__slide-image picture,
-.p-mv__splide .splide__slide-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* MVの画像のアニメーション */
+@keyframes crossfade {
+  0% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
