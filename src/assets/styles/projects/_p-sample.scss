@@ -1,11 +1,7 @@
 @use "../global"as *;
 
 .p-sample {
-  padding-block: calc(60 * var(--to-rem));
 
-  @include mq(md) {
-    padding-block: calc(80 * var(--to-rem));
-  }
 }
 
 .p-sample__inner {

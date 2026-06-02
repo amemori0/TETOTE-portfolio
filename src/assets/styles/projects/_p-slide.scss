@@ -1,0 +1,65 @@
+@use "../global" as *;
+
+.p-slide {
+  container-type: inline-size;
+  position: relative;
+  padding-block: clamp(2.563rem, 1.242rem + 5.63vi, 6.313rem) clamp(6.563rem, 5.88rem + 2.91vi, 8.5rem);
+  overflow: hidden;
+}
+
+.p-slide__title {
+  --_spacing-section-bottom: clamp(calc(55 * var(--to-rem)), 7cqi, calc(109 * var(--to-rem)));
+
+  position: absolute;
+  inset-inline-start: 50%;
+  translate: -50% 0;
+  inset-block-end: var(--_spacing-section-bottom);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(7 * var(--to-rem));
+  font-size: var(--fs-msg-lead-keyword);
+  line-height: 1;
+  font-weight: var(--fw-bold);
+  white-space: nowrap; 
+}
+
+.p-slide__title-box {
+  padding: calc(7 * var(--to-rem)) calc(11 * var(--to-rem));
+  background: var(--color-white);
+}
+
+.p-slide__inner {
+  --_slide-width: calc(480 * var(--to-rem));
+  --_gap: calc(34 * var(--to-rem));
+  --_img-count: 3;
+  --_offset: clamp(calc(27 * var(--to-rem)), 3cqi, calc(36 * var(--to-rem)));
+
+  @include mq(md) {
+    --_slide-width: calc(271 * var(--to-rem));
+    --_gap: calc(16 * var(--to-rem));
+  }
+
+  display: grid;
+  grid-auto-columns: var(--_slide-width);
+  grid-auto-flow: column;
+  column-gap: var(--_gap);
+  animation: scroll calc(var(--_img-count) * 6s) linear infinite;
+}
+
+.p-slide__inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 60px;
+}
+
+.p-slide__inner img[data-offset="true"] {
+  translate: 0 var(--_offset);
+}
+
+@keyframes scroll {
+  to {
+    translate: calc((var(--_slide-width) + var(--_gap)) * var(--_img-count) * -1);
+  }
+}
