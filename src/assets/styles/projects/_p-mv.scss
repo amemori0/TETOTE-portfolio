@@ -29,7 +29,7 @@
   object-fit: cover;
 }
 
-.p-mv__img img:first-child{
+.p-mv__img img:first-child {
   @include mq(md) {
     object-position: 70% top;
   }
@@ -78,13 +78,14 @@
   font-weight: var(--fw-bold);
   line-height: calc(100 / 100);
   color: var(--color-white);
+  font-feature-settings: "palt";
   /* シェイプ */
   padding: var(--_padding-y) calc(var(--_padding-x) + var(--_slant-width)) var(--_padding-y) var(--_padding-x);
   clip-path: polygon(0 0, 100% 0, calc(100% - var(--_slant-width)) 100%, 0 100%);
   background: var(--color-black);
 
   @include mq(md) {
-      inset-block-end: calc(89 * var(--to-rem));
+    inset-block-end: calc(89 * var(--to-rem));
   }
 }
 

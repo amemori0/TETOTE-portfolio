@@ -21,7 +21,8 @@
   font-size: var(--fs-msg-lead-keyword);
   line-height: 1;
   font-weight: var(--fw-bold);
-  white-space: nowrap; 
+  font-feature-settings: "palt";
+  white-space: nowrap;
 }
 
 .p-slide__title-box {

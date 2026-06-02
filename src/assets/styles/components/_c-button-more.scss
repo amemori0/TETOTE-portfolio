@@ -1,0 +1,77 @@
+@use "../global" as *;
+
+.c-button-more {
+  --_padding-y: calc(30 * var(--to-rem));
+  --_padding-x: calc(20 * var(--to-rem));
+  --_icon-size: 20px;
+
+  @include mq(md) {
+    --_padding-y: calc(23 * var(--to-rem));
+    --_padding-x: calc(17 * var(--to-rem));
+  }
+
+  display: inline-grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 1em; /* テキストとアイコンが近すぎるのを防ぐ余白 */
+
+  padding-block: var(--_padding-y);
+  padding-inline: var(--_padding-x) var(--_padding-x);
+  width: min(calc(355 * var(--to-rem)), 100%);
+  border: 1px solid var(--color-black);
+  background: var(--color-white);
+  transition: background var(--duration) var(--ease-in-sine);
+  &::before {
+    content: "";
+  }
+
+  @include mq(md) {
+    width: min(calc(277 * var(--to-rem)), 100%);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--color-black);
+    outline-offset: 4px;
+    background: var(--color-black);
+    .c-button-more__text {
+      color: var(--color-white);
+    }
+    .c-button-more__icon path {
+      fill: var(--color-white);
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: var(--color-black);
+      .c-button-more__text {
+        color: var(--color-white);
+      }
+      .c-button-more__icon path {
+        fill: var(--color-white);
+      }
+    }
+  }
+}
+
+.c-button-more__text {
+  font-size: calc(20 * var(--to-rem));
+  font-family: var(--title-font-family);
+  color: var(--color-black);
+  line-height: calc(100 / 100);
+  text-transform: uppercase;
+
+  @include mq(md) {
+    font-size: calc(16 * var(--to-rem));
+  }
+}
+
+.c-button-more__icon {
+  width: var(--_icon-size);
+  height: auto;
+  justify-self: end;
+}
+
+.c-button-more__icon svg {
+  width: 100%;
+  height: 100%;
+}

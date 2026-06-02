@@ -1,0 +1,31 @@
+@use "../global" as *;
+
+.p-vision__inner {
+  background: url(/assets/images/image_map.webp) no-repeat center center / cover;
+}
+
+.p-vision__text {
+  font-size: var(--fs-msg-lead-text);
+  font-weight: var(--fw-bold);
+  line-height: calc(180 / 100);
+  font-feature-settings: "palt";
+  text-align: center;
+}
+
+.p-vision__text:nth-of-type(2) {
+  margin-block-start: calc(52 * var(--to-rem) + var(--leading-trim));
+
+  @include mq(md) {
+    margin-block-start: calc(39 * var(--to-rem) + var(--leading-trim));
+  }
+}
+
+.p-vision__button-wrap {
+  display: flex;
+  justify-content: center;
+  margin-block-start: calc(52 * var(--to-rem) + var(--leading-trim));
+
+  @include mq(md) {
+    margin-block-start: calc(39 * var(--to-rem) + var(--leading-trim));
+  }
+}
