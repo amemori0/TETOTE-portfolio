@@ -1,7 +1,7 @@
 @use "../global" as *;
 
 .p-footer {
-  padding: calc(40 * var(--to-rem)) 0;
+  padding-block: calc(120px * var(--to-rem));
   background-color: var(--color-primary);
 
   @include mq(md) {
