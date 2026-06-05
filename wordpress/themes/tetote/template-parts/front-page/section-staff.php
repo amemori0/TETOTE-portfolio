@@ -3,7 +3,7 @@
     <hgroup class="c-section-title" data-align="center">
       <h2 class="c-section-title--ja">
         <span class="c-section-title__underline">人</span>を知る
-        <span lang="en" aria-hidden="true" class="c-section-title--en">MEMBER</span>
+        <span lang="en" aria-hidden="true" class="c-section-title--en">Member</span>
       </h2>
     </hgroup>
     <p class="p-top-staff__text">

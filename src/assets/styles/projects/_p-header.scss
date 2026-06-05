@@ -2,8 +2,8 @@
 
 .p-header {
   position: fixed;
-  inset-block-start: 0;
-  inset-inline-start: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: auto;
   z-index: var(--z-index-header);
@@ -137,8 +137,8 @@
   position: fixed;
   display: grid;
   place-content: center;
-  inset-block-start: 0;
-  inset-inline-end: 0;
+  top: 0;
+  right: 0;
   padding-block-start: calc(90 * var(--to-rem));
   width: 100%;
   height: 100vh;

@@ -2,7 +2,6 @@
 
 .p-top-staff {
   padding-block: clamp(4.438rem, 4.349rem + 0.38vi, 4.688rem);
-  //padding-block-start: clamp(4.438rem, 4.349rem + 0.38vi, 4.688rem);
   overflow: hidden; //ページ全体の横スクロール（X軸の揺れ）を完全に防ぐ
 
   @include mq(md) {
@@ -11,7 +10,7 @@
       text-align: left;
     }
     .c-section-title--en {
-      inset-inline-start: 0;
+      left: 0;
       translate: 0 -50%;
     }
   }
@@ -20,6 +19,7 @@
 .p-top-staff__text {
   font-size: calc(16 * var(--to-rem));
   line-height: calc(150 / 100);
+  font-feature-settings: "palt";
   margin-block-start: calc(52 * var(--to-rem) + var(--leading-trim));
 
   @include mq(md) {
@@ -56,8 +56,8 @@
 
 .p-top-staff__info {
   position: absolute;
-  inset-inline-start: 0;
-  inset-block-end: calc(-80 * var(--to-rem));
+  left: 0;
+  bottom: calc(-80 * var(--to-rem));
 
   display: flex;
   flex-direction: column;
@@ -82,6 +82,7 @@
   font-size: calc(24 * var(--to-rem));
   font-weight: var(--fw-bold);
   line-height: calc(100 / 100);
+  font-feature-settings: "palt";
 
   @include mq(md) {
     padding: calc(7 * var(--to-rem)) calc(7 * var(--to-rem));
@@ -118,7 +119,7 @@
 
 .p-top-staff__prev-next-wrap {
   position: absolute;
-  inset-inline-end: 0;
+  right: 0;
   display: flex;
   column-gap: calc(20 * var(--to-rem));
 
@@ -168,3 +169,4 @@
     }
   }
 }
+

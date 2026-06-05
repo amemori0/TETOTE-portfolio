@@ -11,9 +11,9 @@
   --_spacing-section-bottom: clamp(calc(55 * var(--to-rem)), 7cqi, calc(109 * var(--to-rem)));
 
   position: absolute;
-  inset-inline-start: 50%;
+  left: 50%;
+  bottom: var(--_spacing-section-bottom);
   translate: -50% 0;
-  inset-block-end: var(--_spacing-section-bottom);
   z-index: 1;
   display: flex;
   flex-direction: column;

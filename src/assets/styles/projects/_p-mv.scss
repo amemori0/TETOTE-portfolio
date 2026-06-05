@@ -46,8 +46,8 @@
 
 .p-mv__title {
   position: absolute;
-  inset-block-end: calc(307 * var(--to-rem));
-  inset-inline-start: calc(66 * var(--to-rem));
+  bottom: calc(307 * var(--to-rem));
+  left: calc(66 * var(--to-rem));
 
   font-size: var(--fs-mv-main-title);
   font-family: var(--title-font-family);
@@ -57,8 +57,8 @@
   text-shadow: 0px 4px 4px oklch(0 0 0 / 0.25);
 
   @include mq(md) {
-    inset-block-end: calc(137 * var(--to-rem));
-    inset-inline-start: calc(12 * var(--to-rem));
+    bottom: calc(137 * var(--to-rem));
+    left: calc(12 * var(--to-rem));
   }
 }
 
@@ -73,7 +73,7 @@
   }
 
   position: absolute;
-  inset-block-end: calc(163 * var(--to-rem));
+  bottom: calc(163 * var(--to-rem));
   font-size: var(--fs-mv-sub-title);
   font-weight: var(--fw-bold);
   line-height: calc(100 / 100);
@@ -85,20 +85,20 @@
   background: var(--color-black);
 
   @include mq(md) {
-    inset-block-end: calc(89 * var(--to-rem));
+    bottom: calc(89 * var(--to-rem));
   }
 }
 
 .p-mv__new__banner {
   position: absolute;
-  inset-block-end: calc(38 * var(--to-rem));
-  inset-inline-start: calc(71 * var(--to-rem));
+  bottom: calc(38 * var(--to-rem));
+  left: calc(71 * var(--to-rem));
   width: min(calc(1263 * var(--to-rem)), calc(100% - calc(71 * var(--to-rem))));
   padding-inline: calc(12 * var(--to-rem));
 
   @include mq(md) {
-    inset-inline-start: 0;
-    inset-block-end: calc(10 * var(--to-rem));
+    left: 0;
+    bottom: calc(10 * var(--to-rem));
   }
 }
 
