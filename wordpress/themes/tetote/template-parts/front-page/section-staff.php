@@ -1,11 +1,9 @@
 <section class="p-top-staff">
   <div class="l-inner">
-    <hgroup class="c-section-title" data-align="center">
-      <h2 class="c-section-title--ja">
-        <span class="c-section-title__underline">人</span>を知る
-        <span lang="en" aria-hidden="true" class="c-section-title--en">Member</span>
-      </h2>
-    </hgroup>
+    <h2 class="c-section-title" data-align="left">
+      <span class="c-section-title--ja"><span class="c-section-title__underline">人</span>を知る</span>
+      <span lang="en" aria-hidden="true" class="c-section-title--en">Member</span>
+    </h2>
     <p class="p-top-staff__text">
       TETOTEの社員がどういった信念を持って働いているのか、<br>
       一日のスケジュールや仕事内容などを紹介します。

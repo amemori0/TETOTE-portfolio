@@ -1,0 +1,15 @@
+@use "../global" as *;
+
+.c-category {
+  display: flex;
+  align-items: center;
+  column-gap: calc(4 * var(--to-rem));
+
+  grid-row: 1;
+}
+
+.c-category__text {
+  font-size: clamp(calc(12 * var(--to-rem)), 2cqi, calc(14 * var(--to-rem)));
+  line-height: calc(100 / 100);
+  text-box: trim-both cap alphabetic;
+}

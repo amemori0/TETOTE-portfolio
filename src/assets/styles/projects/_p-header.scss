@@ -15,6 +15,7 @@
 }
 
 .p-header__inner {
+  container-type: inline-size;
   display: grid;
   grid-template-columns: calc(250 * var(--to-rem)) minmax(0, 1fr);
   align-items: center;
@@ -52,6 +53,7 @@
 .p-header__drawer-icon {
   --_icon-drawer-size: calc(52 * var(--to-rem));
   --_drawer-gap: calc(15 * var(--to-rem));
+
   @include mq(md) {
     --_icon-drawer-size: calc(32 * var(--to-rem));
     --_drawer-gap: calc(9 * var(--to-rem));
@@ -117,16 +119,13 @@
 }
 
 .p-header__drawer-icon-text {
-  font-size: calc(12 * var(--to-rem));
+  font-size: clamp(calc(10 * var(--to-rem)), 2cqi, calc(12 * var(--to-rem)));
   font-family: var(--title-font-family);
   line-height: calc(100 / 100);
   color: var(--color-white);
   text-transform: uppercase;
   text-align: center;
-
-  @include mq(md) {
-    font-size: calc(10 * var(--to-rem));
-  }
+  white-space: nowrap;
 }
 
 // ----------------------------------------
@@ -193,16 +192,19 @@
 }
 
 .p-header__drawer-list {
+  --_columns: 2;
+  --_gap: calc(30 * var(--to-rem));
+
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: calc(30 * var(--to-rem));
+  grid-template-columns: repeat(var(--_columns), minmax(0, 1fr));
+  column-gap: var(--_gap);
 
   /* border */
   padding-inline-start: calc(63 * var(--to-rem));
   border-inline-start: 1px solid var(--color-secondary);
 
   @include mq(md) {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    --_columns: 1;
     /* borderの削除 */
     padding: 0;
     border: none;
@@ -243,24 +245,16 @@
 }
 
 .p-header__drawer-item-text--en {
-  font-size: calc(32 * var(--to-rem));
+  font-size: clamp(calc(16 * var(--to-rem)), 4cqi, calc(32 * var(--to-rem)));
   font-family: var(--title-font-family);
   line-height: calc(100 / 100);
   text-transform: uppercase;
-
-  @include mq(md) {
-    font-size: calc(18 * var(--to-rem));
-  }
 }
 
 .p-header__drawer-item-text--ja {
-  font-size: calc(16 * var(--to-rem));
+  font-size: clamp(calc(12 * var(--to-rem)), 3cqi, calc(16 * var(--to-rem)));
   line-height: calc(100 / 100);
   font-weight: var(--fw-bold);
-
-  @include mq(md) {
-    font-size: calc(12 * var(--to-rem));
-  }
 }
 .p-header__drawer-bottom {
   --_drawer-bottom-padding: calc(40 * var(--to-rem));

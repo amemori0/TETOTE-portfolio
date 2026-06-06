@@ -1,11 +1,9 @@
 <section class="p-top-benefits">
   <div class="l-inner">
-    <hgroup class="c-section-title" data-align="center">
-      <h2 class="c-section-title--ja">
-        <span class="c-section-title__underline">制度・環境</span>を知る
-        <span lang="en" aria-hidden="true" class="c-section-title--en">Benefits</span>
-      </h2>
-    </hgroup>
+    <h2 class="c-section-title" data-align="center">
+      <span class="c-section-title--ja"><span class="c-section-title__underline">制度・環境</span>を知る</span>
+      <span lang="en" aria-hidden="true" class="c-section-title--en">Benefits</span>
+    </h2>
     <p class="p-top-benefits__text">当社では働く従業員とそのご家族が健やかに過ごせるよう、多様な研修、福利厚生を提供しています。</p>
     <ul class="p-top-benefits__list">
       <li class="p-top-benefits__item">

@@ -1,18 +1,8 @@
 @use "../global" as *;
 
 .p-top-benefits {
-  padding-block-start: clamp(1.5rem, 0.114rem + 5.92vw, 5.438rem);
-
-  @include mq(md) {
-    .c-section-title[data-align="center"] {
-      justify-items: start;
-      text-align: left;
-    }
-    .c-section-title--en {
-      left: 0;
-      translate: 0 -50%;
-    }
-  }
+  container-type: inline-size;
+  padding-block: clamp(1.5rem, 0.114rem + 5.92vi, 5.438rem) clamp(4.875rem, 4.237rem + 2.72vw, 6.688rem);
 }
 
 .p-top-benefits__text {
@@ -77,6 +67,8 @@
 
   &:focus-visible {
     scale: 1.05;
+    outline: 2px solid;
+    outline-offset: 4px;
   }
 
   @media (any-hover: hover) {
@@ -113,6 +105,16 @@
     transition:
       fill var(--duration) var(--ease-out-quart),
       stroke var(--duration) var(--ease-out-quart);
+  }
+
+  &:focus-visible {
+    circle {
+      fill: var(--color-white);
+      stroke: var(--color-black);
+    }
+    path {
+      fill: var(--color-black);
+    }
   }
 
   @media (any-hover: hover) {
