@@ -1,19 +1,19 @@
-<section class="p-vision">
-  <div class="l-inner p-vision__inner">
-    <p class="p-vision__text">
+<section class="p-top-vision">
+  <div class="l-inner p-top-vision__inner">
+    <p class="p-top-vision__text">
       「人手不足」<br>
       今の日本が抱えるこの社会課題に挑み、<br>
       企業と個人の可能性を最大限に引き出す。<br>
       それが私達の役目。
     </p>
 
-    <p class="p-vision__text">
+    <p class="p-top-vision__text">
       単につなぐだけじゃない。<br>
       「手と手」を取り合っていけるような、<br>
       持続可能な社会を、一緒に作りませんか？
     </p>
 
-    <div class="p-vision__button-wrap">
+    <div class="p-top-vision__button-wrap">
       <a href="<?php echo esc_url(home_url("/")); ?>" class="c-button-more">
         <span class="c-button-more__text">View more</span>
         <span class="u-sr-only">About usページへ</span>

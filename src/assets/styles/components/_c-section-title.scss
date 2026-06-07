@@ -2,44 +2,36 @@
 
 .c-section-title {
   display: grid;
-  width: fit-content;
+  width: 100%;
+  justify-items: center;
   position: relative;
   font-weight: var(--fw-bold);
   line-height: calc(100 / 100);
   font-feature-settings: "palt";
-
-  margin-inline: auto;
-
-  .c-section-title--ja,
-  .c-section-title--en {
-    justify-self: center;
-  }
+  overflow: hidden;
+  isolation: isolate;
 
   &[data-align="left"] {
-    margin-inline-start: 0;
-    margin-inline-end: auto;
-
+    justify-items: start;
     .c-section-title--ja,
     .c-section-title--en {
-      justify-self: center;
-
-      @include mq(md) {
-        justify-self: start;
-      }
+      justify-self: start;
     }
   }
 
   &[data-align="right"] {
-    margin-inline-start: auto;
-    margin-inline-end: 0;
-
+    justify-items: end;
     .c-section-title--ja,
     .c-section-title--en {
-      justify-self: center;
+      justify-self: end;
+    }
+  }
 
-      @include mq(md) {
-        justify-self: end;
-      }
+  @include mq(md) {
+    justify-items: start;
+    .c-section-title--ja,
+    .c-section-title--en {
+      justify-self: start;
     }
   }
 }

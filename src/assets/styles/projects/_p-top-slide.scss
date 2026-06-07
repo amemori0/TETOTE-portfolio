@@ -1,13 +1,13 @@
 @use "../global" as *;
 
-.p-slide {
+.p-top-slide {
   container-type: inline-size;
   position: relative;
   padding-block: clamp(2.563rem, 1.242rem + 5.63vi, 6.313rem) clamp(6.563rem, 5.88rem + 2.91vi, 8.5rem);
   overflow: hidden;
 }
 
-.p-slide__title {
+.p-top-slide__title {
   --_spacing-section-bottom: clamp(calc(55 * var(--to-rem)), 7cqi, calc(109 * var(--to-rem)));
 
   position: absolute;
@@ -25,12 +25,12 @@
   white-space: nowrap;
 }
 
-.p-slide__title-box {
+.p-top-slide__title-box {
   padding: calc(7 * var(--to-rem)) calc(11 * var(--to-rem));
   background: var(--color-white);
 }
 
-.p-slide__inner {
+.p-top-slide__inner {
   --_slide-width: calc(480 * var(--to-rem));
   --_gap: calc(34 * var(--to-rem));
   --_img-count: 3;
@@ -48,14 +48,14 @@
   animation: scroll calc(var(--_img-count) * 6s) linear infinite;
 }
 
-.p-slide__inner img {
+.p-top-slide__inner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 60px;
 }
 
-.p-slide__inner img[data-offset="true"] {
+.p-top-slide__inner img[data-offset="true"] {
   translate: 0 var(--_offset);
 }
 

@@ -1,0 +1,49 @@
+@use "../global" as *;
+
+.p-top-recruit {
+  container-type: inline-size;
+  padding-block-start: calc(45 * var(--to-rem));
+  padding-block-end: clamp(5.5rem, 4.378rem + 4.79vi, 8.688rem);
+  background: var(--color-off-white);
+  isolation: isolate;
+
+  @include mq(md) {
+    padding-block-start: calc(65 * var(--to-rem));
+  }
+}
+
+.p-top-recruit__text {
+  display: flex;
+  justify-content: center;
+}
+
+.p-top-recruit__list {
+  --_gap: calc(16 * var(--to-rem));
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--_gap);
+  margin-block-start: calc(64 * var(--to-rem) + var(--leading-trim));
+
+  //全て1カラム
+  & > * {
+    flex-basis: 100%;
+  }
+
+  @container (768px <= width) {
+    // 1・2番目を2カラム
+    & > li:nth-child(1),
+    & > li:nth-child(2) {
+      flex-basis: calc((100% - var(--_gap)) / 2);
+    }
+
+    // 3番目は1カラム
+    & > li:nth-child(3) {
+      flex-basis: 100%;
+    }
+  }
+
+  @include mq(md) {
+    margin-block-start: calc(28 * var(--to-rem) + var(--leading-trim));
+  }
+}

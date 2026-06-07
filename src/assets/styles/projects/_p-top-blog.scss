@@ -12,6 +12,11 @@
   }
 }
 
+.p-top-blog__text{
+  font-size: calc(16 * var(--to-rem));
+  line-height: calc(150 / 100);
+}
+
 .p-top-blog__button-wrap {
   position: absolute;
   top: calc(84 * var(--to-rem));
