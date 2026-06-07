@@ -6,9 +6,12 @@
   --_padding-x--lg: calc(96 * var(--to-rem));
 
   display: inline-grid;
-  place-content: center;
   padding: var(--_padding-y) var(--_padding-x);
   transition: background var(--duration) var(--ease-in-sine);
+
+  &::before {
+    content: "";
+  }
 }
 
 .c-button__link {
@@ -17,6 +20,13 @@
   color: var(--color-white);
   line-height: calc(100 / 100);
   text-transform: uppercase;
+}
+
+.c-button__icon {
+  --_size: 16px;
+  width: var(--_size);
+  height: auto;
+  justify-self: end;
 }
 
 /* エントリーボタン */
@@ -38,7 +48,7 @@
 .c-button--secondary {
   background: var(--color-black);
 
-    &:focus-visible {
+  &:focus-visible {
     background: oklch(from var(--color-black) l c h / 0.8);
   }
 
@@ -49,10 +59,33 @@
   }
 }
 
-/* 矢印付ボタン */
-.c-button--wide {
-}
-
+/* ドロワーメニューの大きめのボタン */
 .c-button--lg {
   padding-inline: var(--_padding-x--lg);
+}
+
+/* 矢印付ボタン */
+.c-button--arrow {
+  --_padding-y: calc(27 * var(--to-rem));
+  --_padding-x: calc(20 * var(--to-rem));
+
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 1em;
+
+  @include mq(md) {
+    --_padding-y: calc(20 * var(--to-rem));
+  }
+
+  padding: var(--_padding-y) var(--_padding-x);
+  width: min(calc(556 * var(--to-rem)), 100%);
+
+  .c-button__link {
+    font-size: calc(16 * var(--to-rem));
+    color: var(--color-black);
+  }
+
+  @include mq(md) {
+    width: min(calc(200 * var(--to-rem)), 100%);
+  }
 }

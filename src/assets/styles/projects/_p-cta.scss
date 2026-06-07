@@ -1,0 +1,49 @@
+@use "../global" as *;
+
+.p-cta {
+  min-height: calc(488 * var(--to-rem));
+  background: url(/assets/images/image_cta.webp) no-repeat center center / cover;
+
+  display: flex;
+  align-items: end;
+
+  @include mq(md) {
+    min-height: calc(250 * var(--to-rem));
+  }
+}
+
+.p-cta__inner {
+  container-type: inline-size;
+  width: min(calc(1440 * var(--to-rem) + 16 * var(--to-rem) * 2), 100%);
+  padding-inline: calc(16 * var(--to-rem));
+  margin-inline: auto;
+}
+
+.p-cta__content {
+  width: min(calc(956 * var(--to-rem)), 100%);
+  margin-inline: auto;
+  padding-block: calc(50 * var(--to-rem));
+  border-radius: 20px;
+  background: var(--color-white);
+  text-align: center;
+  margin-block-end: calc(-136 * var(--to-rem));
+
+  @include mq(md) {
+    padding-block: calc(24 * var(--to-rem)) calc(29 * var(--to-rem));
+    padding-inline: calc(25 * var(--to-rem)) calc(23 * var(--to-rem));
+    margin-block-end: calc(-118 * var(--to-rem));
+  }
+}
+
+.p-cta__text {
+  font-size: clamp(calc(14 * var(--to-rem)), 4cqi, calc(16 * var(--to-rem)));
+  font-weight: var(--fw-bold);
+  line-height: calc(150 / 100);
+}
+
+.p-cta__button-wrap {
+  margin-block-start: calc(31 * var(--to-rem) + var(--leading-trim));
+  @include mq(md) {
+    margin-block-start: calc(24 * var(--to-rem) + var(--leading-trim));
+  }
+}
