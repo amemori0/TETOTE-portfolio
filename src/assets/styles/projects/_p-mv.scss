@@ -35,6 +35,12 @@
   }
 }
 
+.p-mv__img img:nth-child(2) {
+  @include mq(md) {
+    object-position: 60% top;
+  }
+}
+
 /* 画像の切り替えアニメーション */
 .p-mv__img img:nth-of-type(odd) {
   animation: crossfade 8s infinite;
