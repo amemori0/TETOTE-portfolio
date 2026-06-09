@@ -1,0 +1,92 @@
+@use "../global" as *;
+
+.p-service {
+  container-type: inline-size;
+  padding-block-start: clamp(5rem, 4.318rem + 2.91vi, 6.938rem);
+}
+
+.p-service__title {
+  font-size: var(--fs-page-title);
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+  font-feature-settings: "palt";
+}
+
+.p-service__lead-wrap {
+  width: min(78ch, 100%);
+}
+.p-service__lead {
+  font-size: calc(16 * var(--to-rem));
+  line-height: calc(150 / 100);
+  margin-block-start: calc(44 * var(--to-rem) + var(--leading-trim));
+
+  @media (max-width: 890px) {
+    margin-block-start: calc(20 * var(--to-rem) + var(--leading-trim));
+  }
+}
+.p-service__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(49 * var(--to-rem));
+  margin-block-start: calc(82 * var(--to-rem) + var(--leading-trim));
+
+  @media (max-width: 890px) {
+    row-gap: calc(30 * var(--to-rem));
+    margin-block-start: calc(60 * var(--to-rem) + var(--leading-trim));
+  }
+}
+.p-service__item {
+  display: grid;
+  grid-template-columns: calc(457 * var(--to-rem)) minmax(0, 1fr);
+  column-gap: calc(47 * var(--to-rem));
+
+  padding-block-end: calc(49 * var(--to-rem));
+  border-block-end: 1px solid var(--color-secondary);
+
+  @media (max-width: 890px) {
+    grid-template-columns: minmax(0, 1fr);
+    padding-block-end: calc(30 * var(--to-rem));
+  }
+}
+
+.p-service__img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 457 / 261;
+
+  @media (max-width: 890px) {
+    width: min(calc(350 * var(--to-rem)), 100%);
+  }
+}
+
+.p-service__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.p-service__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(40 * var(--to-rem));
+
+  @media (max-width: 890px) {
+    row-gap: calc(20 * var(--to-rem));
+  }
+}
+.p-service__item-title {
+  font-size: clamp(calc(24 * var(--to-rem)), 3cqi, calc(24 * var(--to-rem)));
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+  color: var(--color-primary);
+  margin-block-start: calc(22 * var(--to-rem));
+}
+.p-service__item-catch {
+  font-size: clamp(calc(24 * var(--to-rem)), 3cqi, calc(24 * var(--to-rem)));
+  font-weight: var(--fw-bold);
+  line-height: calc(150 / 100);
+}
+.p-service__item-text {
+  font-size: calc(16 * var(--to-rem));
+  line-height: calc(150 / 100);
+}

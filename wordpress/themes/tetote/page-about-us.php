@@ -14,4 +14,5 @@
 </main>
 <?php get_template_part("template-parts/value"); ?>
 <?php get_template_part("template-parts/message"); ?>
+<?php get_template_part("template-parts/service"); ?>
 <?php get_footer(); ?>

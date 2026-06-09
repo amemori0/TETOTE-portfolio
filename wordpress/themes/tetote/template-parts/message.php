@@ -6,7 +6,7 @@
             <div class="p-message__img">
         <img
           src="<?php echo esc_url(get_theme_file_uri("/assets/images/image_ceo.webp")); ?>"
-          alt=""
+          alt="代表取締役 田中浩二郎"
           width="484"
           height="629"
           loading="lazy"
