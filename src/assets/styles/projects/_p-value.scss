@@ -1,0 +1,79 @@
+@use "../global" as *;
+
+.p-value {
+  container-type: inline-size;
+  padding-block-start: clamp(3rem, 2.604rem + 1.69vi, 4.125rem);
+}
+
+.p-value__title {
+  font-size: var(--fs-page-title);
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+  font-feature-settings: "palt";
+  text-align: center;
+}
+.p-value__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(35 * var(--to-rem));
+  margin-block-start: calc(86 * var(--to-rem) + var(--leading-trim));
+  counter-reset: value-count;
+
+  @include mq(md) {
+    row-gap: calc(24 * var(--to-rem));
+    margin-block-start: calc(56 * var(--to-rem) + var(--leading-trim));
+  }
+}
+
+.p-value__item {
+  padding: calc(30 * var(--to-rem)) calc(80 * var(--to-rem));
+  border-radius: 10px;
+  background: var(--color-off-white);
+  counter-increment: value-count;
+
+  @include mq(md) {
+    padding: calc(24 * var(--to-rem)) calc(20 * var(--to-rem));
+  }
+}
+
+.p-value__item-header {
+  display: flex;
+  align-items: center;
+  column-gap: calc(21 * var(--to-rem));
+
+  @include mq(md) {
+    column-gap: calc(18 * var(--to-rem));
+  }
+}
+
+.p-value__item-number {
+  --_number-size: 48px;
+
+  display: grid;
+  place-content: center;
+  font-size: calc(18 * var(--to-rem));
+  line-height: calc(100 / 100);
+
+  width: var(--_number-size);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 1px solid;
+  flex-shrink: 0; //タイトルが長くても円が縮まないようにするため
+
+  &::before {
+    content: counter(value-count);
+  }
+}
+
+.p-value__item-title {
+  font-size: clamp(calc(16 * var(--to-rem)), 2cqi, calc(20 * var(--to-rem)));
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+  font-feature-settings: "palt";
+}
+
+.p-value__item-text {
+  font-size: clamp(calc(14 * var(--to-rem)), 2cqi, calc(16 * var(--to-rem)));
+  line-height: calc(150 / 100);
+  margin-block-start: clamp(calc(16 * var(--to-rem)), 2cqi, calc(21 * var(--to-rem)));
+}
