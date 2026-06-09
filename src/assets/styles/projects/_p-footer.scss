@@ -57,7 +57,7 @@
 .p-footer__nav {
   --_logo-nav-spacing: calc(20 * var(--to-rem));
 
-  width: min(40em, 100%);
+  width: min(70ch, 100%);
   justify-self: end;
   grid-area: nav;
   padding-inline-start: var(--_logo-nav-spacing);

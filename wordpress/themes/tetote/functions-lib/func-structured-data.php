@@ -89,6 +89,23 @@ function add_simple_structured_data()
     echo "</script>" . PHP_EOL;
   }
 }
+
+add_filter(
+  "bcn_breadcrumb_title",
+  function ($title, $type, $id) {
+    if ($id) {
+      $slug = get_post_field("post_name", $id);
+
+      if ($slug) {
+        return $slug;
+      }
+    }
+
+    return $title;
+  },
+  10,
+  3,
+);
 add_action("wp_head", "add_simple_structured_data", 20);
 
 /**

@@ -1,0 +1,13 @@
+@use "../global" as *;
+
+.breadcrumb {
+  padding-block: calc(20 * var(--to-rem));
+  background: #f0f0f0;
+}
+
+.breadcrumb a,
+.breadcrumb span {
+  font-size: calc(14 * var(--to-rem));
+  line-height: calc(100 / 100);
+  text-transform: uppercase;
+}

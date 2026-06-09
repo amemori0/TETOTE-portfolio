@@ -32,11 +32,11 @@
   --fs-section-title: clamp(1.5rem, 1.324rem + 0.75vi, 2rem);
   --fs-section-en-title: clamp(5rem, 3.768rem + 5.26vi, 8.5rem);
   --fs-section-ja-title: clamp(2rem, 1.56rem + 1.88vi, 3.25rem);
-
-  /*  spカンプなし */
-  --fs-hero-en-title: ;
-  --fs-hero-ja-title: ;
-  --fs-hero-lead: ;
+  --fs-hero-en-title: clamp(2.5rem, 1.972rem + 2.25vi, 4rem);
+  --fs-hero-ja-title: clamp(1.125rem, 0.993rem + 0.56vi, 1.5rem);
+  /* 余白 */
+  --hero-padding-top: clamp(0.625rem, -0.805rem + 6.1vw, 4.688rem);
+  --hero-padding-left: clamp(1.25rem, -3.415rem + 19.91vi, 14.5rem);
 
   /* 各種イージング */
   --ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
