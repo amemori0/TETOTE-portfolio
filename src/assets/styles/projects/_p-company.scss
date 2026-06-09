@@ -1,0 +1,48 @@
+@use "../global" as *;
+
+.p-company {
+  padding-block-start: clamp(5.75rem, 4.408rem + 5.73vi, 9.563rem);
+  padding-block-end: clamp(4.375rem, 2.857rem + 6.48vi, 8.688rem);
+}
+
+.p-company__title {
+  font-size: var(--fs-page-title);
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+  font-feature-settings: "palt";
+}
+.p-company__info {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: calc(36 * var(--to-rem)) calc(102 * var(--to-rem));
+  margin-block-start: calc(113 * var(--to-rem) + var(--leading-trim));
+
+  @include mq(md) {
+    gap: calc(20 * var(--to-rem)) calc(34 * var(--to-rem));
+    margin-block-start: calc(70 * var(--to-rem) + var(--leading-trim));
+  }
+}
+.p-company__row {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+
+  padding-block-end: calc(36 * var(--to-rem));
+  border-block-end: 1px dotted;
+
+  @include mq(md) {
+    padding-block-end: calc(20 * var(--to-rem));
+  }
+}
+.p-company__term {
+  font-size: calc(16 * var(--to-rem));
+  font-weight: var(--fw-bold);
+}
+.p-company__desc {
+  font-size: calc(16 * var(--to-rem));
+  line-height: calc(100 / 100);
+}
+
+.p-company__business-list {
+  list-style: revert;
+}

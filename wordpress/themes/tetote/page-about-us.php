@@ -15,4 +15,6 @@
 <?php get_template_part("template-parts/value"); ?>
 <?php get_template_part("template-parts/message"); ?>
 <?php get_template_part("template-parts/service"); ?>
+<?php get_template_part("template-parts/company"); ?>
+<?php get_template_part("template-parts/cta"); ?>
 <?php get_footer(); ?>
