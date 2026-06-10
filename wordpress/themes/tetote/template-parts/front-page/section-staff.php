@@ -11,40 +11,53 @@
 
     <div class="p-top-staff__swiper-container">
       <div class="swiper p-top-staff__swiper">
-        <ul class="swiper-wrapper p-top-staff__swiper-wrapper">
-
-          <li class="swiper-slide p-top-staff__swiper-slide">
-            <article class="c-staff-card" aria-labelledby="staff-name-01">
-              <a href="">
-                <div class="c-staff-card-img">
-              <img
-                src="<?php echo esc_url(get_theme_file_uri('/assets/images/image_staff_01.webp')); ?>"
-                alt="西村 優"
-                width="300"
-                height="379"
-                loading="lazy"
-              >
-              </div>
-              <div class="c-staff-card__info">
-                <p class="c-staff-card__message">
-                  <span class="c-staff-card__message-box">スタッフメッセージ</span>
-                  <span class="c-staff-card__message-box">スタッフメッセージ</span>
-                </p>
-                <div class="c-staff-card__meta">
-                  <span class="c-staff-card__occupation">コンサルタント</span>
-                  <span class="c-staff-card__year">2011年入社</span>
-                </div>
-                <h3 class="c-staff-card__name" id="staff-name-01">西村 優</h3>
-              </div>
-              </a>
-            </article>
-          </li>
-        </ul>
+        <?php
+        $args = [
+          "post_type" => "staff",
+          "posts_per_page" => 6,
+        ];
+        $the_query = new WP_Query($args);
+        ?>
+        <?php if ($the_query->have_posts()): ?>
+          <ul class="swiper-wrapper p-top-staff__swiper-wrapper">
+            <?php while ($the_query->have_posts()):
+              $the_query->the_post(); ?>
+              <li class="swiper-slide p-top-staff__swiper-slide">
+                <article class="c-staff-card" aria-labelledby="staff-name-<?php echo $staff_id; ?>">
+                  <a href="<?php the_permalink(); ?>" class="c-staff-card__link">
+                    <?php if (has_post_thumbnail()): ?>
+                      <?php the_post_thumbnail("full", ["class" => "c-staff-card__img"]); ?>
+                    <?php else: ?>
+                      <img class="c-staff-card__img" src="<?php echo esc_url(get_theme_file_uri("/images/assets/image_dummy.webp")); ?>" alt="" />
+                    <?php endif; ?>
+                    
+                    <div class="c-staff-card__info">
+                      <p class="c-staff-card__message">
+                        <span class="c-staff-card__message-box"><?php the_field("staff_message_01"); ?></span>
+                        <span class="c-staff-card__message-box"><?php the_field("staff_message_02"); ?></span>
+                      </p>
+                    </div>
+                  </a>
+                  
+                  <div class="c-staff-card__meta">
+                    <span class="c-staff-card__occupation"><?php the_field("staff_category"); ?></span>
+                    <span class="c-staff-card__year"><?php the_field("staff_joining_year"); ?></span>
+                  </div>
+                  <h3 class="c-staff-card__name" id="staff-name-<?php echo $staff_id; ?>"><?php the_title(); ?></h3>
+                </article>
+              </li>
+            <?php
+            endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+          </ul>
+        <?php else: ?>
+          <p>記事が投稿されていません</p>
+        <?php endif; ?>
       </div>
     </div>
 
     <div class="p-top-staff__button-wrap">
-      <a href="<?php echo esc_url(home_url('/')); ?>" class="c-button-more">
+      <a href="<?php echo esc_url(home_url("/")); ?>" class="c-button-more">
         <span class="c-button-more__text">View more</span>
         <span class="u-sr-only">スタッフ一覧ページへ</span>
         <svg class="c-button-more__icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
