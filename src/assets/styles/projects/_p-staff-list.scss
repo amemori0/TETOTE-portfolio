@@ -1,0 +1,24 @@
+@use "../global" as *;
+
+.p-staff {
+  padding-block-start: clamp(5rem, 3.9rem + 4.69vi, 8.125rem);
+  padding-block-end: clamp(4.375rem, 2.857rem + 6.48vw, 8.688rem);
+}
+
+.p-staff__list {
+  --_columns: 3;
+  --_column-gap: calc(43 * var(--to-rem));
+  --_row-gap: calc(48 * var(--to-rem));
+
+  display: grid;
+  grid-template-columns: repeat(var(--_columns), minmax(0, 1fr));
+  gap: var(--_row-gap) var(--_column-gap);
+
+  @media (max-width: 950px) {
+    --_columns: 2;
+  }
+
+  @include mq(sm) {
+    --_columns: 1;
+  }
+}

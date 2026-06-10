@@ -43,61 +43,6 @@
   margin-block-start: clamp(calc(25 * var(--to-rem)), 3cqi, calc(36 * var(--to-rem)));
 }
 
-.p-top-staff__info {
-  position: absolute;
-  left: 0;
-  bottom: calc(-80 * var(--to-rem));
-
-  display: flex;
-  flex-direction: column;
-}
-
-.p-top-staff__swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 30px;
-}
-
-.p-top-staff__message {
-  display: flex;
-  flex-direction: column;
-  row-gap: calc(6 * var(--to-rem));
-}
-
-.p-top-staff__message-box {
-  padding: calc(5 * var(--to-rem)) calc(7 * var(--to-rem));
-  background: var(--color-secondary);
-  font-size: calc(24 * var(--to-rem));
-  font-weight: var(--fw-bold);
-  line-height: calc(100 / 100);
-  font-feature-settings: "palt";
-
-  @include mq(md) {
-    padding: calc(7 * var(--to-rem)) calc(7 * var(--to-rem));
-    font-size: calc(16 * var(--to-rem));
-  }
-}
-
-.p-top-staff__meta {
-  display: flex;
-  column-gap: calc(9 * var(--to-rem));
-  margin-block-start: calc(16 * var(--to-rem));
-}
-
-.p-top-staff__occupation,
-.p-top-staff__year,
-.p-top-staff__name {
-  font-size: calc(16 * var(--to-rem));
-  font-weight: var(--fw-bold);
-  line-height: calc(100 / 100);
-}
-
-.p-top-staff__name {
-  font-size: calc(24 * var(--to-rem));
-  margin-block-start: calc(16 * var(--to-rem));
-}
-
 .p-top-staff__button-wrap {
   position: relative;
   display: flex;

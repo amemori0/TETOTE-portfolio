@@ -270,6 +270,22 @@
     row-gap: calc(13 * var(--to-rem));
   }
 }
+
+/* トップページ以外はデフォルトで黒 */
+body:not(.home) {
+  .p-header__logo path {
+    fill: var(--color-black);
+  }
+
+  .p-header__drawer-icon--bar {
+    background: var(--color-black);
+  }
+
+  .p-header__drawer-icon-text {
+    color: var(--color-black);
+  }
+}
+
 /* MVを過ぎたらスタイルを変更 */
 .p-header.js-scrolled {
   .p-header__logo path {
@@ -280,7 +296,7 @@
     background: var(--color-black);
   }
 
-  .p-header__drawer-icon-text{
+  .p-header__drawer-icon-text {
     color: var(--color-black);
   }
 }

@@ -14,7 +14,9 @@
         <ul class="swiper-wrapper p-top-staff__swiper-wrapper">
 
           <li class="swiper-slide p-top-staff__swiper-slide">
-            <article aria-labelledby="staff-name-01">
+            <article class="c-staff-card" aria-labelledby="staff-name-01">
+              <a href="">
+                <div class="c-staff-card-img">
               <img
                 src="<?php echo esc_url(get_theme_file_uri('/assets/images/image_staff_01.webp')); ?>"
                 alt="西村 優"
@@ -22,17 +24,19 @@
                 height="379"
                 loading="lazy"
               >
-              <div class="p-top-staff__info">
-                <p class="p-top-staff__message">
-                  <span class="p-top-staff__message-box">スタッフメッセージ</span>
-                  <span class="p-top-staff__message-box">スタッフメッセージ</span>
-                </p>
-                <div class="p-top-staff__meta">
-                  <span class="p-top-staff__occupation">コンサルタント</span>
-                  <span class="p-top-staff__year">2011年入社</span>
-                </div>
-                <h3 class="p-top-staff__name" id="staff-name-01">西村 優</h3>
               </div>
+              <div class="c-staff-card__info">
+                <p class="c-staff-card__message">
+                  <span class="c-staff-card__message-box">スタッフメッセージ</span>
+                  <span class="c-staff-card__message-box">スタッフメッセージ</span>
+                </p>
+                <div class="c-staff-card__meta">
+                  <span class="c-staff-card__occupation">コンサルタント</span>
+                  <span class="c-staff-card__year">2011年入社</span>
+                </div>
+                <h3 class="c-staff-card__name" id="staff-name-01">西村 優</h3>
+              </div>
+              </a>
             </article>
           </li>
         </ul>

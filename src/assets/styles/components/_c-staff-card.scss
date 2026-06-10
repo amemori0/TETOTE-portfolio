@@ -1,0 +1,62 @@
+@use "../global" as *;
+
+.c-staff-card {
+  position: relative;
+}
+
+.c-staff-card__img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 300 / 379;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.c-staff-card__info {
+  position: absolute;
+  left: 0;
+  bottom: calc(66 * var(--to-rem));
+  display: flex;
+  flex-direction: column;
+}
+
+.c-staff-card__message {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(6 * var(--to-rem));
+}
+
+.c-staff-card__message-box {
+  padding: calc(5 * var(--to-rem)) calc(7 * var(--to-rem));
+  background: var(--color-secondary);
+  width: fit-content;
+
+  font-size: calc(24 * var(--to-rem));
+  font-size: clamp(calc(16 * var(--to-rem)), 2cqi, calc(24 * var(--to-rem)));
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+  font-feature-settings: "palt";
+
+  @include mq(md) {
+    padding: calc(7 * var(--to-rem)) calc(7 * var(--to-rem));
+  }
+}
+
+.c-staff-card__meta {
+  display: flex;
+  column-gap: calc(9 * var(--to-rem));
+  margin-block-start: calc(16 * var(--to-rem));
+}
+
+.c-staff-card__occupation,
+.c-staff-card__year,
+.c-staff-card__name {
+  font-size: calc(16 * var(--to-rem));
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+}
+
+.c-staff-card__name {
+  font-size: calc(24 * var(--to-rem));
+  margin-block-start: calc(16 * var(--to-rem));
+}

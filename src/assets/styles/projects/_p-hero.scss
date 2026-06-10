@@ -43,9 +43,11 @@
   font-family: var(--title-font-family);
   line-height: calc(100 / 100);
   color: var(--color-black);
+  text-transform: uppercase;
 
   padding: calc(3 * var(--to-rem)) calc(10 * var(--to-rem));
   background: var(--color-white);
+  width: fit-content;
 }
 
 .p-hero__ja-title {
