@@ -28,7 +28,7 @@ $the_query = new WP_Query($args);
                 <?php if (has_post_thumbnail()): ?>
                   <?php the_post_thumbnail("full", ["class" => "c-staff-card__img"]); ?>
                 <?php else: ?>
-                  <img class="c-staff-card__img" src="<?php echo esc_url(get_theme_file_uri("/images/noimage.jpg")); ?>" alt="NoImage画像" />
+                  <img class="c-staff-card__img" src="<?php echo esc_url(get_theme_file_uri("/images/assets/image_dummy.webp")); ?>" alt="" />
                 <?php endif; ?>
                 
                 <div class="c-staff-card__info">
