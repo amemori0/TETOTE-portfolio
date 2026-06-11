@@ -1,7 +1,24 @@
 @use "../global" as *;
 
-.p-staff-detail-content {
-  padding-block-start: clamp(4.375rem, 3.715rem + 2.82vi, 6.25rem);
+.p-staff-detail-content__main {
+  grid-area: main;
+}
+
+/* h2のみに左に下線 */
+.p-staff-detail-content__main h2 {
+  position: relative;
+  --_offset: calc(16 * var(--to-rem));
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    right: calc(100% + var(--_offset));
+    width: 100%;
+    height: 1px;
+    border-image: linear-gradient(currentColor 0 0) fill 0 / /0 0 0 100vi;
+  }
 }
 
 :where(.p-staff-detail-content__main) {
@@ -15,20 +32,8 @@
     margin-block-start: calc(23 * var(--to-rem) + var(--leading-trim));
   }
 
-  // 一番最初にあるh2の直後の要素だけ、さらに50pxで上書き
-  > h2:first-child + * {
-    margin-block-start: calc(50 * var(--to-rem) + var(--leading-trim));
-  }
-
-  p:first-of-type {
-    margin-block-start: calc(50 * var(--to-rem) + var(--leading-trim));
-  }
-}
-
-.p-staff-detail-content__main {
-  ul,
-  ol {
-    list-style: revert;
-    padding-inline-start: calc(8 * var(--to-rem));
+  /* spで目次が上に来るために余白を指定 */
+  @include mq(md) {
+    margin-block-start: calc(30 * var(--to-rem));
   }
 }

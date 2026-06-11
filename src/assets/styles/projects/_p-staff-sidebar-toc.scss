@@ -1,0 +1,54 @@
+@use "../global" as *;
+
+.p-sidebar-staff-toc {
+  position: sticky;
+  top: calc(var(--header-height) + calc(40 * var(--to-rem)));
+
+  @include mq(md) {
+    position: static;
+    grid-area: toc;
+  }
+}
+
+#toc p {
+  font-size: calc(14 * var(--to-rem));
+  font-weight: var(--fw-bold);
+  line-height: calc(150 / 100);
+  color: #666666;
+}
+
+#toc ol {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(16 * var(--to-rem));
+  margin-block-start: calc(13 * var(--to-rem) + var(--leading-trim));
+}
+
+#toc li {
+  --_icon-size: 4px;
+  --_gap: 0.5em;
+  --_icon-offset: calc(var(--_icon-size) + var(--_gap));
+
+  display: block flow-root;
+  padding-inline-start: var(--_icon-offset);
+  font-size: calc(14 * var(--to-rem));
+  font-weight: var(--fw-bold);
+  line-height: calc(150 / 100);
+  color: #999999;
+
+  &::before {
+    content: "";
+    float: inline-start;
+    width: var(--_icon-size);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    margin-block: calc((1lh - var(--_icon-size)) / 2);
+    margin-inline-start: calc(var(--_icon-offset) * -1);
+    background: linear-gradient(currentColor 0 0), CanvasText; /* 強制カラーモードでも視認できる背景色として扱うようにする */
+  }
+}
+
+/* 目次の表示中のスタイル */
+#toc li.js-active {
+  color: var(--color-black);
+}

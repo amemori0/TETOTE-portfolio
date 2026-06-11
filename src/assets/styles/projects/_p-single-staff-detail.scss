@@ -1,0 +1,19 @@
+@use "../global" as *;
+
+.p-single-staff-detail {
+  padding-block-start: clamp(4.375rem, 3.715rem + 2.82vi, 6.25rem);
+}
+
+.p-single-staff-detail__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) calc(210 * var(--to-rem));
+  column-gap: calc(56 * var(--to-rem));
+  align-items: start; //サイドバーの目次を固定させるため
+
+  @include mq(md) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "toc"
+      "main";
+  }
+}
