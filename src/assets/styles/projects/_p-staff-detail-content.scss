@@ -1,0 +1,34 @@
+@use "../global" as *;
+
+.p-staff-detail-content {
+  padding-block-start: clamp(4.375rem, 3.715rem + 2.82vi, 6.25rem);
+}
+
+:where(.p-staff-detail-content__main) {
+  //デフォルト余白すべて50px
+  > * + * {
+    margin-block-start: calc(50 * var(--to-rem) + var(--leading-trim));
+  }
+
+  // h2の直後にくるすべての要素pでもulでも余白だけを上書き
+  > h2 + * {
+    margin-block-start: calc(23 * var(--to-rem) + var(--leading-trim));
+  }
+
+  // 一番最初にあるh2の直後の要素だけ、さらに50pxで上書き
+  > h2:first-child + * {
+    margin-block-start: calc(50 * var(--to-rem) + var(--leading-trim));
+  }
+
+  p:first-of-type {
+    margin-block-start: calc(50 * var(--to-rem) + var(--leading-trim));
+  }
+}
+
+.p-staff-detail-content__main {
+  ul,
+  ol {
+    list-style: revert;
+    padding-inline-start: calc(8 * var(--to-rem));
+  }
+}
