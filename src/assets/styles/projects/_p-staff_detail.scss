@@ -1,0 +1,94 @@
+@use "../global" as *;
+
+.p-staff-detail {
+  background: var(--color-off-white);
+}
+
+.p-staff-detail__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) calc(286 * var(--to-rem));
+  column-gap: calc(85 * var(--to-rem));
+  padding-block-start: clamp(calc(40 * var(--to-rem)), 8cqi, calc(77 * var(--to-rem)));
+  padding-block-end: clamp(calc(30 * var(--to-rem)), 4cqi, calc(43 * var(--to-rem)));
+
+  @include mq(md) {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: calc(30 * var(--to-rem));
+  }
+}
+
+.p-staff-detail__catch {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(21 * var(--to-rem));
+
+  @include mq(md) {
+    row-gap: calc(12 * var(--to-rem));
+  }
+}
+.p-staff-detail__catch-box {
+  padding: calc(3 * var(--to-rem)) calc(10 * var(--to-rem));
+  background: var(--color-white);
+  width: fit-content;
+  font-size: var(--fs-staff-catch-01);
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+}
+
+.p-staff-detail__catch-box:nth-of-type(2) {
+  font-size: var(--fs-staff-catch-02);
+}
+
+.p-staff-detail__meta {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(12 * var(--to-rem));
+  margin-block-start: clamp(calc(24 * var(--to-rem)), 3cqi, calc(33 * var(--to-rem)));
+}
+.p-staff-detail__occupation {
+  font-size: calc(14 * var(--to-rem));
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+  color: var(--color-primary);
+}
+.p-staff-detail__name-wrap {
+  display: flex;
+  align-items: center;
+  column-gap: calc(20 * var(--to-rem));
+
+  @include mq(md) {
+    column-gap: calc(12 * var(--to-rem));
+  }
+}
+.p-staff-detail__name {
+  font-size: clamp(calc(18 * var(--to-rem)), 3cqi, calc(24 * var(--to-rem)));
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+}
+.p-staff-detail__year {
+  font-size: calc(16 * var(--to-rem));
+  line-height: calc(100 / 100);
+}
+.p-staff-detail__profile {
+  margin-block-start: calc(13 * var(--to-rem) + var(--leading-trim));
+}
+.p-staff-detail__text {
+  font-size: calc(16 * var(--to-rem));
+  line-height: calc(180 / 100);
+}
+
+.p-staff-detail__wrap {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 286 / 368;
+
+  @include mq(md) {
+    width: min(calc(286 * var(--to-rem)), 100%);
+    margin-inline: auto;
+  }
+}
+.p-staff-detail__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
