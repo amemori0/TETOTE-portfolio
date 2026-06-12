@@ -2,6 +2,7 @@
 
 .c-category {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   column-gap: calc(4 * var(--to-rem));
 
