@@ -1,0 +1,11 @@
+@use "../global" as *;
+
+.p-archive-blog {
+  padding-block: clamp(5rem, 3.9rem + 4.69vi, 8.125rem);
+}
+
+.p-archive-blog-button-wrap {
+  width: fit-content;
+  margin-inline: auto;
+  margin-block-start: clamp(calc(50 * var(--to-rem)), 12cqi, calc(120 * var(--to-rem)));
+}
