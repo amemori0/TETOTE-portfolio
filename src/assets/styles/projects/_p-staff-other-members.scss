@@ -1,0 +1,24 @@
+@use "../global" as *;
+
+.p-staff-other-members {
+  padding-block-start: clamp(3.75rem, 3.222rem + 2.25vi, 5.25rem);
+  padding-block-end: clamp(5rem, 3.702rem + 5.54vi, 8.688rem);
+}
+
+.p-staff-other-members__title {
+  font-size: calc(32 * var(--to-rem));
+  font-weight: var(--fw-bold);
+  line-height: calc(180 / 100);
+  text-align: center;
+}
+
+.p-staff-other-members__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(280 * var(--to-rem)), 1fr));
+  gap: calc(43 * var(--to-rem));
+  margin-block-start: calc(50 * var(--to-rem) + var(--leading-trim));
+
+  @include mq(md) {
+    margin-block-start: calc(20 * var(--to-rem) + var(--leading-trim));
+  }
+}
