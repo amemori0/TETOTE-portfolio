@@ -1,5 +1,65 @@
 @use "../global" as *;
 
+.p-blog-detail {
+  width: min(calc(800 * var(--to-rem)), 100%);
+  margin-inline: auto;
+  padding-block: calc(41 * var(--to-rem)) calc(23 * var(--to-rem));
+  padding-inline: calc(40 * var(--to-rem));
+  background: var(--color-white);
+  border-radius: 10px;
+}
+
+.p-blog-detail__header {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(25 * var(--to-rem));
+
+  @include mq(md) {
+    row-gap: calc(18 * var(--to-rem));
+  }
+}
 .p-blog-detail__meta {
   display: flex;
+  align-items: center;
+  column-gap: calc(19 * var(--to-rem));
+
+  @include mq(md) {
+    column-gap: calc(14 * var(--to-rem));
+  }
+}
+
+.p-blog-detail__date {
+  font-size: calc(14 * var(--to-rem));
+  line-height: calc(100 / 100);
+}
+.p-blog-detail__title {
+  font-size: clamp(calc(24 * var(--to-rem)), 4cqi, calc(32 * var(--to-rem)));
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+}
+.p-blog-detail__thumbnail {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 720 / 411;
+  margin-block-start: calc(41 * var(--to-rem) + var(--leading-trim));
+}
+
+.p-blog-detail__thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+:where(.p-blog-detail__content) {
+  margin-block-start: calc(45 * var(--to-rem));
+
+  // デフォルト余白（全要素間）
+  > * + * {
+    margin-block-start: calc(50 * var(--to-rem) + var(--leading-trim));
+  }
+
+  // h2の直後にくるすべての要素（p, ulなど）の上の余白を上書き
+  > h2 + * {
+    margin-block-start: calc(23 * var(--to-rem) + var(--leading-trim));
+  }
 }

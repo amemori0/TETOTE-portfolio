@@ -93,26 +93,9 @@ function add_simple_structured_data()
 add_filter(
   "bcn_breadcrumb_title",
   function ($title, $type, $id) {
-    if (in_array("post-staff-archive", $type, true) || in_array("type-staff", $type, true)) {
-      if ($id) {
-        $post_type = get_post_type($id);
-      } else {
-        $post_type = get_query_var("post_type");
-      }
-      if ($post_type) {
-        return strtolower(is_array($post_type) ? $post_type[0] : $post_type);
-      }
-    }
-
-    if ($id) {
+    if ($id && get_post_type($id) === "page") {
       $slug = get_post_field("post_name", $id);
-
       if ($slug) {
-        if (strlen($slug) !== mb_strlen($slug, "utf-8")) {
-          $post_type = get_post_type($id);
-          return strtolower($post_type . "-" . $id);
-        }
-
         return strtolower($slug);
       }
     }
@@ -122,8 +105,6 @@ add_filter(
   10,
   3,
 );
-
-add_action("wp_head", "add_simple_structured_data", 20);
 
 /**
  * ページの構造化データを生成

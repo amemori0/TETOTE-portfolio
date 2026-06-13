@@ -14,14 +14,14 @@ get_header(); ?>
     $post_type = get_post_type();
 ?>
     <main class="l-main">
-      <article class="p-single p-single--<?php echo esc_attr($post_type); ?>" itemscope itemtype="https://schema.org/Article">
-        <div class="p-single__inner l-inner">
-          <?php get_template_part("template-parts/single/header"); ?>
-          <?php get_template_part("template-parts/single/body"); ?>
-          <?php get_template_part("template-parts/single/related"); ?>
-          <?php get_template_part("template-parts/single/navigation"); ?>
+      <?php get_template_part("template-parts/breadcrumb"); ?>
+      <article class="p-single-blog">
+        <div class="l-inner">
+          <?php get_template_part("template-parts/single/blog-detail"); ?>
         </div>
       </article>
+        <?php get_template_part("template-parts/blog-nav"); ?>
+      <?php get_template_part("template-parts/cta"); ?>
     </main>
 <?php
   endwhile;

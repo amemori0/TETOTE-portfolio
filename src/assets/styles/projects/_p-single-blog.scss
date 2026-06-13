@@ -1,0 +1,7 @@
+@use "../global" as *;
+
+.p-single-blog {
+  padding-block-start: clamp(1.25rem, 0.942rem + 1.31vi, 2.125rem);
+  padding-block-end: clamp(4.375rem, 2.857rem + 6.48vi, 8.688rem);
+  background: var(--color-off-white);
+}

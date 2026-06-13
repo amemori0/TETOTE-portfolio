@@ -10,15 +10,16 @@
   @include mq(md) {
     padding-block-start: calc(54 * var(--to-rem));
   }
+  
+  /* トップページのブログは白 */
+   .p-blog__content {
+    background: var(--color-white);
+  }
 }
 
 .p-top-blog__text {
   font-size: calc(16 * var(--to-rem));
   line-height: calc(150 / 100);
-}
-
-.p-blog__content {
-  background: var(--color-white);
 }
 
 .p-top-blog__button-wrap {
