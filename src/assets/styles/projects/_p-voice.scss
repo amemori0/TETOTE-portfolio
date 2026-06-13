@@ -1,0 +1,60 @@
+@use "../global" as *;
+
+.p-voice {
+  padding-block-start: clamp(3.75rem, 2.254rem + 6.38vi, 8rem);
+  padding-block-end: clamp(3.125rem, 1.166rem + 8.36vi, 8.688rem);
+}
+.p-voice__title {
+  font-size: var(--fs-page-title);
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+  font-feature-settings: "palt";
+}
+.p-voice__list {
+  --_columns: 2;
+  
+  display: grid;
+  grid-template-columns: repeat(var(--_columns), minmax(0, 1fr));
+  column-gap: calc(46 * var(--to-rem));
+  margin-block-start: calc(23 * var(--to-rem) + var(--leading-trim));
+
+  @include mq(md) {
+    row-gap: calc(30 * var(--to-rem));
+    --_columns: 1;
+  }
+}
+
+.p-voice__meta {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(13 * var(--to-rem));
+}
+.p-voice__year {
+  font-size: calc(16 * var(--to-rem));
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+  color: var(--color-primary);
+}
+
+.p-voice__name {
+  font-size: clamp(calc(18 * var(--to-rem)), 4cqi, calc(24 * var(--to-rem)));
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+}
+.p-voice__text {
+  font-size: calc(16 * var(--to-rem));
+  line-height: calc(180 / 100);
+  margin-block-start: calc(25 * var(--to-rem) + var(--leading-trim));
+}
+.p-voice__img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 980 / 560;
+  margin-block-start: calc(36 * var(--to-rem) + var(--leading-trim));
+}
+
+.p-voice__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
