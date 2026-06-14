@@ -2,7 +2,7 @@
 
 /**
  * 
- * 
+ * 固定ページ(benefits)
  */
 get_header(); ?>
 <main l-main>

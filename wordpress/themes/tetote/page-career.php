@@ -2,7 +2,7 @@
 
 /**
  * 
- * 
+ * 固定ページ(career)
  */
 get_header(); ?>
 <main l-main>
