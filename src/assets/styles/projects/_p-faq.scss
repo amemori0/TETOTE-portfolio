@@ -1,0 +1,38 @@
+@use "../global" as *;
+
+.p-faq {
+  container-type: inline-size;
+  padding-block-start: clamp(3.75rem, 2.254rem + 6.38vi, 8rem);
+  padding-block-end: clamp(3.125rem, 1.166rem + 8.36vi, 8.688rem);
+}
+
+.p-faq__button-wrap {
+  display: flex;
+  column-gap: clamp(calc(12 * var(--to-rem)), 5cqi, calc(49 * var(--to-rem)));
+  margin-block-start: calc(70 * var(--to-rem) + var(--leading-trim));
+
+  @media (max-width: 1060px) {
+    flex-direction: column;
+    row-gap: calc(20 * var(--to-rem));
+    width: fit-content;
+    margin-inline: auto;
+  }
+  @include mq(md) {
+    margin-block-start: calc(40 * var(--to-rem) + var(--leading-trim));
+  }
+}
+
+.p-faq__sub-title {
+  font-size: calc(32 * var(--to-rem));
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+  margin-block-start: clamp(calc(48 * var(--to-rem)), 9cqi, calc(88 * var(--to-rem)));
+}
+
+.p-faq__accordion-wrap {
+  margin-block-start: calc(113 * var(--to-rem) + var(--leading-trim));
+
+  @include mq(md) {
+    margin-block-start: calc(60 * var(--to-rem) + var(--leading-trim));
+  }
+}

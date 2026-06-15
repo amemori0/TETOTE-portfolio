@@ -1,0 +1,69 @@
+@use "../global" as *;
+
+.c-accordion__item {
+  --_q-gap: calc(20 * var(--to-rem));
+  --_q-fs: calc(24 * var(--to-rem));
+
+  border-block-start: 1px solid var(--color-secondary);
+  border-block-end: 1px solid var(--color-secondary);
+}
+
+.c-accordion__summary {
+  display: grid;
+  grid-template-columns: max-content 1fr 1em;
+  grid-template-areas: "q text icon";
+  column-gap: var(--_q-gap);
+  align-items: center;
+  padding-block: calc(32 * var(--to-rem));
+  cursor: pointer;
+  user-select: none; //連打による誤選択による青いハイライトを防ぐため
+  -webkit-user-select: none;
+}
+
+.c-accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+/* アイコン（+ / -）の疑似要素 */
+.c-accordion__summary::before,
+.c-accordion__summary::after {
+  content: "";
+  grid-area: icon;
+  border-block-end: 2px solid var(--color-primary);
+  transition:
+    rotate var(--duration) var(--ease-in-sine),
+    opacity var(--duration) var(--ease-in-sine);
+}
+
+.c-accordion__summary::after {
+  rotate: 90deg;
+}
+
+/* c-accordion__item が開いた時のアイコン変化 */
+.c-accordion__item[open] > .c-accordion__summary::after {
+  opacity: 0;
+  rotate: 0deg;
+}
+
+.c-accordion__q {
+  grid-area: q;
+  font-size: var(--_q-fs);
+  font-family: var(--title-font-family);
+  line-height: calc(100 / 100);
+  color: var(--color-primary);
+}
+
+.c-accordion__title {
+  grid-area: text;
+  font-size: calc(16 * var(--to-rem));
+  line-height: calc(100 / 100);
+}
+
+.c-accordion__content {
+  overflow: hidden;
+}
+
+.c-accordion__content-inner {
+  padding-inline-start: calc(var(--_q-gap) + var(--_q-fs));
+  padding-block-end: calc(36 * var(--to-rem));
+}
