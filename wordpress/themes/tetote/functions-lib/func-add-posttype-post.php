@@ -34,21 +34,16 @@ function change_post_menu_labels()
 add_action("init", "change_post_labels");
 add_action("admin_menu", "change_post_menu_labels");
 
-/**
- * 通常投稿（post）のアーカイブを有効化し、スラッグを「news」に設定
- * これにより /news/ で archive-news.php が使用される
- */
-/* 
+
 function enable_post_archive_with_slug($args, $post_type)
 {
   if ($post_type === "post") {
     $args["has_archive"] = true;
     $args["rewrite"] = [
-      "slug" => "news",
+      "slug" => "staff",
       "with_front" => false,
     ];
   }
   return $args;
 }
 add_filter("register_post_type_args", "enable_post_archive_with_slug", 10, 2); 
-*/

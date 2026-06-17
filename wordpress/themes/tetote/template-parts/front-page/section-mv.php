@@ -10,7 +10,7 @@
     <img src="<?php echo esc_url(get_theme_file_uri("/assets/images/image_mv_02.webp")); ?>" alt="" width="1440" height="823">
   </div>
   <h1 class="p-mv__title">
-    <span class="u-text__block">Become a</span>
+    <span>Become a</span><br>
     <span>Challenger.</span>
   </h1>
   <h2 class="p-mv__sub-title">君の挑戦が、意思が、未来を変える</h2>

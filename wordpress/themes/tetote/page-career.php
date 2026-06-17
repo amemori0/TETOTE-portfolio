@@ -5,7 +5,7 @@
  * 固定ページ(career)
  */
 get_header(); ?>
-<main l-main>
+<main class="l-main">
       <?php get_template_part('template-parts/hero', null, [
   'img_src'    => get_theme_file_uri('/assets/images/image_hero_career.webp'),
   'img_alt'    => '',
