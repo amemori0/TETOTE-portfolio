@@ -1,0 +1,482 @@
+@use "../global" as *;
+
+.p-entry {
+  --_padding-y-top-min: 1.25rem;
+  --_padding-y-top-max: 2.063rem;
+  --_padding-y-bottom-min: 2.125rem;
+  --_padding-y-bottom-max: 3.563rem;
+
+  padding-block-start: clamp(var(--_padding-y-top-min), 0.964rem + 1.22vi, var(--_padding-y-top-max));
+  padding-block-end: clamp(var(--_padding-y-bottom-min), 1.619rem + 2.16vi, var(--_padding-y-bottom-max));
+  background: var(--color-off-white);
+}
+
+.p-entry__inner {
+  --_max-width: calc(880 * var(--to-rem));
+  --_padding-x: calc(17 * var(--to-rem));
+
+  width: min(calc(var(--_max-width) + var(--_padding-x) * 2), 100%);
+  padding-inline: var(--_padding-x);
+  margin-inline: auto;
+  background: var(--color-white);
+}
+
+.p-entry__form-box {
+  --_padding-y-top: calc(58 * var(--to-rem));
+  --_padding-y-bottom: calc(81 * var(--to-rem));
+  --_padding-x: calc(71 * var(--to-rem));
+
+  padding-block: var(--_padding-y-top) var(--_padding-y-bottom);
+  padding-inline: var(--_padding-x);
+
+  @include mq(md) {
+    --_padding-y-top: calc(30 * var(--to-rem));
+    --_padding-y-bottom: calc(30 * var(--to-rem));
+    --_padding-x: calc(20 * var(--to-rem));
+  }
+}
+
+// ----------------------------------------
+// ヘッダー
+// ----------------------------------------
+
+.p-entry__header {
+  --_row-gap: calc(29 * var(--to-rem));
+
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--_row-gap);
+  width: fit-content;
+  margin-inline: auto;
+
+  @include mq(md) {
+    text-align: center;
+  }
+}
+
+.p-entry__sub-title {
+  --_font-size-min: calc(18 * var(--to-rem));
+  --_font-size-max: calc(24 * var(--to-rem));
+
+  font-size: clamp(var(--_font-size-min), 3cqi, var(--_font-size-max));
+  line-height: calc(100 / 100);
+  font-feature-settings: "palt";
+  text-transform: uppercase;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.p-entry__title {
+  --_font-size-min: calc(24 * var(--to-rem));
+  --_font-size-max: calc(32 * var(--to-rem));
+
+  font-size: clamp(var(--_font-size-min), 4cqi, var(--_font-size-max));
+  font-weight: var(--fw-bold);
+  line-height: calc(100 / 100);
+  font-feature-settings: "palt";
+
+  span {
+    color: var(--color-primary);
+  }
+}
+
+.p-entry__lead-text {
+  --_font-size: calc(16 * var(--to-rem));
+  --_margin-top: calc(51 * var(--to-rem));
+  --_padding-bottom-min: calc(40 * var(--to-rem));
+  --_padding-bottom-max: calc(95 * var(--to-rem));
+
+  font-size: var(--_font-size);
+  line-height: calc(150 / 100);
+  font-feature-settings: "palt";
+  margin-block-start: calc(var(--_margin-top) + var(--leading-trim));
+  padding-block-end: clamp(var(--_padding-bottom-min), 11cqi, var(--_padding-bottom-max));
+  border-block-end: 1px solid var(--color-secondary);
+  text-align: center;
+}
+
+// ----------------------------------------
+// フォーム全体
+// ----------------------------------------
+
+.p-entry__form {
+  --_margin-top-min: calc(42 * var(--to-rem));
+  --_margin-top-max: calc(97 * var(--to-rem));
+
+  margin-block-start: clamp(var(--_margin-top-min), 11cqi, var(--_margin-top-max));
+}
+
+.p-entry__table {
+  --_row-gap: calc(27 * var(--to-rem));
+  --_col-gap: calc(35 * var(--to-rem));
+
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--_row-gap) var(--_col-gap);
+
+  @include mq(md) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.p-entry__row {
+  --_row-gap: 0px;
+
+  display: grid;
+  align-items: center;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  row-gap: var(--_row-gap);
+
+  @include mq(md) {
+    --_row-gap: calc(10 * var(--to-rem));
+  }
+
+  &:is([data-status="desired-position"], [data-status="self-pr"], [data-status="referral-source"]) {
+    align-items: start;
+  }
+}
+
+.p-entry__label {
+  --_font-size: calc(16 * var(--to-rem));
+
+  font-size: var(--_font-size);
+  line-height: calc(100 / 100);
+}
+
+// ----------------------------------------
+// CF7ラップ要素
+// ----------------------------------------
+.p-entry__table .wpcf7-form-control-wrap {
+  display: block;
+  width: 100%;
+}
+
+// ----------------------------------------
+// 入力欄
+// ----------------------------------------
+.p-entry__input {
+  --_padding: calc(20 * var(--to-rem));
+
+  width: 100%;
+  padding: var(--_padding);
+  background: var(--color-off-white);
+  border-radius: 10px;
+  border: 1px solid var(--color-primary);
+  cursor: pointer;
+}
+
+// ----------------------------------------
+// 生年月日
+// ----------------------------------------
+.p-entry__input--year {
+  --_width: calc(168 * var(--to-rem));
+  width: var(--_width);
+}
+
+.p-entry__date-item {
+  --_col-gap: calc(10 * var(--to-rem));
+  --_row-gap: 0px;
+
+  display: flex;
+  column-gap: var(--_col-gap);
+  row-gap: var(--_row-gap);
+  align-items: center;
+
+  .wpcf7-form-control-wrap {
+    width: auto;
+  }
+
+  @include mq(md) {
+    --_row-gap: calc(10 * var(--to-rem));
+    flex-wrap: wrap;
+  }
+}
+
+.p-entry__date-pair {
+  --_gap: calc(10 * var(--to-rem));
+
+  display: flex;
+  align-items: center;
+  column-gap: var(--_gap);
+}
+
+.p-entry__date-unit {
+  --_font-size: calc(16 * var(--to-rem));
+
+  font-size: var(--_font-size);
+  line-height: calc(100 / 100);
+}
+
+// ----------------------------------------
+// セレクトボックス
+// ----------------------------------------
+.p-entry__select {
+  --_width: calc(168 * var(--to-rem));
+  --_font-size: calc(12 * var(--to-rem));
+
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--_width);
+  font-size: var(--_font-size);
+  line-height: calc(100 / 100);
+}
+
+.p-entry__select-wrap {
+  --_icon-size: 12px;
+  --_icon-right: calc(15 * var(--to-rem));
+
+  position: relative;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    right: var(--_icon-right);
+    translate: 0 -50%;
+    width: var(--_icon-size);
+    height: auto;
+    pointer-events: none;
+
+    @media (forced-colors: active) {
+      * {
+        stroke: CanvasText;
+      }
+    }
+  }
+
+  .wpcf7-form-control-wrap {
+    display: contents;
+  }
+}
+
+// ----------------------------------------
+// ラジオボタン・チェックボックス CF7対応
+// ----------------------------------------
+.p-entry__radio-group,
+.p-entry__checkbox-group {
+  .wpcf7-list-item {
+    display: block;
+    margin: 0;
+  }
+  .wpcf7-list-item label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .wpcf7-list-item-label {
+    display: block;
+  }
+}
+
+.p-entry__radio-group {
+  --_row-gap: calc(15 * var(--to-rem));
+  --_col-gap: calc(12 * var(--to-rem));
+
+  .p-entry__radio-control {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--_row-gap);
+  }
+  .wpcf7-list-item label {
+    column-gap: var(--_col-gap);
+  }
+}
+
+.p-entry__checkbox-group {
+  --_row-gap: calc(21 * var(--to-rem));
+  --_col-gap: calc(13 * var(--to-rem));
+
+  .p-entry__checkbox-control {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--_row-gap);
+  }
+  .wpcf7-list-item label {
+    column-gap: var(--_col-gap);
+  }
+}
+
+// ----------------------------------------
+// カスタムラジオ・チェックボックス共通
+// ----------------------------------------
+.p-entry__radio-group input[type="radio"],
+.p-entry__checkbox-group input[type="checkbox"] {
+  --_size: 24px;
+  --_inner: 10px;
+
+  position: relative;
+  appearance: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: var(--_size);
+  aspect-ratio: 1;
+  border: 2px solid var(--color-secondary);
+  background: var(--color-off-white);
+  transition: border-color var(--duration) var(--ease-in-out-cubic);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--_inner);
+    aspect-ratio: 1;
+    background: var(--color-black);
+    translate: -50% -50%;
+    opacity: 0;
+    transition:
+      translate var(--duration) var(--ease-in-out-cubic),
+      opacity var(--duration) var(--ease-in-out-cubic);
+  }
+
+  &:checked {
+    border-color: var(--color-primary);
+    &::before {
+      translate: -50% -50%;
+      opacity: 1;
+    }
+  }
+
+  @media (forced-colors: active) {
+    border-color: CanvasText;
+    background-color: Canvas;
+    &::before {
+      background-color: HighlightText;
+    }
+    &:checked {
+      border-color: Highlight;
+      background-color: Canvas;
+      &::before {
+        background-color: Highlight;
+      }
+    }
+  }
+}
+
+.p-entry__radio-group input[type="radio"] {
+  border-radius: 50%;
+  &::before {
+    border-radius: 50%;
+  }
+}
+
+// ----------------------------------------
+// テキストエリア（自己PR）
+// ----------------------------------------
+.p-entry__textarea {
+  --_min-rows: 5;
+  --_max-rows: 20;
+  --_padding: 1em;
+
+  width: 100%;
+  min-block-size: calc(var(--_min-rows) * 1lh + var(--_padding) * 2);
+  max-block-size: calc(var(--_max-rows) * 1lh + var(--_padding) * 2);
+  padding: var(--_padding);
+  background: var(--color-off-white);
+  border: 1px solid var(--color-secondary);
+  border-radius: 10px;
+  field-sizing: content;
+
+  @supports (field-sizing: content) {
+    resize: none;
+  }
+}
+
+// ----------------------------------------
+// 同意チェックボックス・送信ボタン
+// ----------------------------------------
+.p-entry__acceptance {
+  --_margin-top-min: calc(40 * var(--to-rem));
+  --_margin-top-max: calc(100 * var(--to-rem));
+
+  width: fit-content;
+  margin-inline: auto;
+  margin-block-start: clamp(var(--_margin-top-min), 11cqi, var(--_margin-top-max));
+}
+
+.p-entry__acceptance-checkbox {
+  --_col-gap: calc(6 * var(--to-rem));
+
+  display: flex;
+  align-items: center;
+  column-gap: var(--_col-gap);
+  cursor: pointer;
+
+  &:has(:focus-visible) {
+    outline: 1px solid;
+  }
+}
+
+.p-entry__acceptance-input {
+  --_input-size: 24px;
+  --_checkmark-width: 6px;
+  --_checkmark-height: 11px;
+
+  appearance: none;
+  -webkit-appearance: none;
+  flex-shrink: 0;
+  width: var(--_input-size);
+  height: var(--_input-size);
+  border: 2px solid var(--color-secondary);
+  background: var(--color-off-white);
+  position: relative;
+
+  transition:
+    background var(--duration) var(--ease-in-out-cubic),
+    border-color var(--duration) var(--ease-in-out-cubic);
+
+  @media (forced-colors: active) {
+    border-color: CanvasText;
+    background-color: Canvas;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: var(--_checkmark-width);
+    height: var(--_checkmark-height);
+    border-block-end: 3px solid var(--color-white);
+    border-inline-end: 3px solid var(--color-white);
+    translate: -50% -50%;
+    rotate: 45deg;
+    scale: 0.5;
+    opacity: 0;
+
+    transition:
+      scale var(--duration) var(--ease-in-out-cubic),
+      opacity var(--duration) var(--ease-in-out-cubic);
+
+    @media (forced-colors: active) {
+      border-color: HighlightText;
+    }
+  }
+
+  &:checked {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+
+    &::before {
+      scale: 1;
+      opacity: 1;
+    }
+
+    @media (forced-colors: active) {
+      background-color: Highlight;
+      border-color: Highlight;
+    }
+  }
+}
+
+.p-entry__submit {
+  --_margin-top-min: calc(24 * var(--to-rem));
+  --_margin-top-max: calc(61 * var(--to-rem));
+
+  margin-block-start: clamp(var(--_margin-top-min), 7cqi, var(--_margin-top-max));
+  text-align: center;
+}
+
+.wpcf7-spinner {
+  display: none;
+}

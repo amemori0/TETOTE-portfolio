@@ -1,0 +1,11 @@
+@use "../global" as *;
+
+.c-button-submit {
+  --_padding-x: calc(20 * var(--to-rem));
+  --_padding-y: calc(96 * var(--to-rem));
+
+  display: inline-block;
+  padding: var(--_padding-x) var(--_padding-y);
+  background: var(--color-white);
+  border: 1px solid;
+}

@@ -12,6 +12,10 @@
   @include mq(md) {
     padding: calc(8 * var(--to-rem)) calc(12 * var(--to-rem));
   }
+
+  body:not(.home) & {
+    background: var(--color-white);
+  }
 }
 
 .p-header__inner {
