@@ -164,7 +164,9 @@
   }
 
   @include mq(md) {
-    place-content: start;
+    justify-self: center;
+    align-content: start;
+    place-content: normal;
   }
 }
 
@@ -176,6 +178,10 @@
   width: min(calc(903 * var(--to-rem) + 12 * var(--to-rem) * 2), 100%);
   padding-inline: calc(12 * var(--to-rem));
   margin-inline: auto;
+
+  @include mq(md) {
+    display: block;
+  }
 }
 
 .p-header__drawer-logo {
@@ -218,11 +224,20 @@
 .p-header__drawer-item {
   /* border */
   padding-block: calc(23 * var(--to-rem));
-  border-block-start: 1px solid var(--color-secondary);
   border-block-end: 1px solid var(--color-secondary);
 
   @include mq(md) {
     padding-block: calc(13 * var(--to-rem));
+  }
+}
+
+.p-header__drawer-item:is(:nth-of-type(1), :nth-of-type(2)) {
+  border-block-start: 1px solid var(--color-secondary);
+
+  @include mq(md) {
+    &:nth-of-type(2) {
+      border-block-start: none;
+    }
   }
 }
 

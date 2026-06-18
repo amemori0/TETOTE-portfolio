@@ -1,18 +1,18 @@
 @use "../global" as *;
 
-.p-detail {
+.p-details {
   container-type: inline-size;
   padding-block-start: clamp(3.75rem, 2.254rem + 6.38vi, 8rem);
   padding-block-end: clamp(3.125rem, 1.166rem + 8.36vi, 8.688rem);
 }
 
-.p-detail__title {
+.p-details__title {
   font-size: var(--fs-page-title);
   font-weight: var(--fw-bold);
   line-height: calc(100 / 100);
   font-feature-settings: "palt";
 }
-.p-detail__lead {
+.p-details__lead {
   font-size: calc(16 * var(--to-rem));
   line-height: calc(100 / 100);
   margin-block-start: calc(113 * var(--to-rem) + var(--leading-trim));
@@ -22,7 +22,7 @@
   }
 }
 
-.p-detail__button-wrap {
+.p-details__button-wrap {
   display: flex;
   column-gap: clamp(calc(12 * var(--to-rem)), 5cqi, calc(49 * var(--to-rem)));
   margin-block-start: calc(70 * var(--to-rem) + var(--leading-trim));
@@ -38,7 +38,7 @@
   }
 }
 
-.p-detail__sub-title {
+.p-details__sub-title {
   font-size: calc(32 * var(--to-rem));
   font-weight: var(--fw-bold);
   line-height: calc(100 / 100);

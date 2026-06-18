@@ -8,10 +8,10 @@
     </a>
     <div class="p-header__nav">
       <div class="p-header__button-warp">
-        <a class="c-button c-button--secondary" href="<?php echo esc_url(home_url("details")); ?>">
+        <a class="c-button c-button--secondary" href="<?php echo esc_url(home_url("/details")); ?>">
           <span class="c-button__link">募集要項</span>
         </a>
-        <a class="c-button c-button--primary" href="<?php echo esc_url(home_url("entry")); ?>">
+        <a class="c-button c-button--primary" href="<?php echo esc_url(home_url("/entry")); ?>">
           <span class="c-button__link">Entry</span>
         </a>
       </div>
@@ -41,14 +41,14 @@
     <nav class="p-header__drawer-nav">
       <ul class="p-header__drawer-list">
         <li class="p-header__drawer-item">
-          <a class="p-header__drawer-item-texts" href="<?php echo esc_url(home_url("about-us")); ?>"
-          <?php if (is_front_page()) : ?>aria-current="page"<?php endif; ?>>
+          <a class="p-header__drawer-item-texts" href="<?php echo esc_url(home_url("/about-us")); ?>"
+          <?php if (is_page('about-us')) : ?>aria-current="page"<?php endif; ?>>
             <span class="p-header__drawer-item-text--en">About us</span>
             <span class="p-header__drawer-item-text--ja">TETOTEについて</span>
           </a>
         </li>
         <li class="p-header__drawer-item">
-          <a class="p-header__drawer-item-texts" href="<?php echo esc_url(home_url("benefits")); ?>"
+          <a class="p-header__drawer-item-texts" href="<?php echo esc_url(home_url("/benefits")); ?>"
           <?php if (is_page('benefits')) : ?>aria-current="page"<?php endif; ?>
             >
             <span class="p-header__drawer-item-text--en">Benefits</span>
@@ -56,21 +56,21 @@
           </a>
         </li>
         <li class="p-header__drawer-item">
-          <a class="p-header__drawer-item-texts" href="<?php echo esc_url(home_url("staff")); ?>"
+          <a class="p-header__drawer-item-texts" href="<?php echo esc_url(home_url("/staff")); ?>"
           <?php if (is_page('staff')) : ?>aria-current="page"<?php endif; ?>>
             <span class="p-header__drawer-item-text--en">Staff</span>
             <span class="p-header__drawer-item-text--ja">社員について</span>
           </a>
         </li>
         <li class="p-header__drawer-item">
-          <a class="p-header__drawer-item-texts" href="<?php echo esc_url(home_url("career")); ?>"
+          <a class="p-header__drawer-item-texts" href="<?php echo esc_url(home_url("/career")); ?>"
           <?php if (is_page('career')) : ?>aria-current="page"<?php endif; ?>>
-            <span class="p-header__drawer-item-text--en">Carrer</span>
+            <span class="p-header__drawer-item-text--en">Career</span>
             <span class="p-header__drawer-item-text--ja">研修制度とキャリアパス</span>
           </a>
         </li>
         <li class="p-header__drawer-item">
-          <a class="p-header__drawer-item-texts" href="<?php echo esc_url(home_url("blog")); ?>"
+          <a class="p-header__drawer-item-texts" href="<?php echo esc_url(home_url("/blog")); ?>"
           <?php if (is_page('blog') || is_singular('post')) : ?>aria-current="page"<?php endif; ?>
             >
             <span class="p-header__drawer-item-text--en">Blog</span>
@@ -78,7 +78,7 @@
           </a>
         </li>
         <li class="p-header__drawer-item">
-          <a class="p-header__drawer-item-texts" href="<?php echo esc_url(home_url("faq")); ?>"
+          <a class="p-header__drawer-item-texts" href="<?php echo esc_url(home_url("/faq")); ?>"
           <?php if (is_page('faq')) : ?>aria-current="page"<?php endif; ?>
             >
             <span class="p-header__drawer-item-text--en">Faq</span>
@@ -87,10 +87,10 @@
         </li>
       </ul>
       <div class="p-header__drawer-bottom">
-        <a href="<?php echo esc_url(home_url("details")); ?>" class="c-button c-button--secondary c-button--lg">
+        <a href="<?php echo esc_url(home_url("/details")); ?>" class="c-button c-button--secondary c-button--lg">
         <span class="c-button__link">募集要項</span>
       </a>
-      <a href="<?php echo esc_url(home_url("entry")); ?>" class="c-button c-button--primary c-button--lg">
+      <a href="<?php echo esc_url(home_url("/entry")); ?>" class="c-button c-button--primary c-button--lg">
       <span class="c-button__link">Entry</span>
     </a>
   </div>

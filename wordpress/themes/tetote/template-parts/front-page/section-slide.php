@@ -1,5 +1,9 @@
 <?php
-$slide_items = [["src" => "image_slide_01.webp", "alt" => "PCの前で電話対応をするスーツ姿の男性社員"], ["src" => "image_slide_02.webp", "alt" => "ノートPCを開いたカフェ風のオフィスで、笑顔で作業をする女性社員"], ["src" => "image_slide_03.webp", "alt" => "オフィスで資料を見せながら笑顔で面談を行う2人の女性"]];
+$slide_items = [
+  ["src" => "image_slide_01.webp", "alt" => "PCの前で電話対応をするスーツ姿の男性社員"],
+  ["src" => "image_slide_02.webp", "alt" => "ノートPCを開いたカフェ風のオフィスで、笑顔で作業をする女性社員"],
+  ["src" => "image_slide_03.webp", "alt" => "オフィスで資料を見せながら笑顔で面談を行う2人の女性"],
+];
 
 $img_count = count($slide_items);
 ?>

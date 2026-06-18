@@ -67,7 +67,7 @@
     <?php endif; ?>
 
     <div class="p-top-blog__button-wrap">
-      <a href="<?php echo esc_url(home_url("/")); ?>" class="p-top-blog__link">
+      <a href="<?php echo esc_url(home_url("/blog")); ?>" class="p-top-blog__link">
         <svg class="p-top-blog__link-icon" aria-hidden="true" focusable="false" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="29" cy="29" r="28.5" fill="white" stroke="#222222"/>
           <g transform="translate(20.5, 21.5)">

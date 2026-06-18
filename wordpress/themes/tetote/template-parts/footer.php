@@ -16,15 +16,15 @@
 
     <nav class="p-footer__nav" aria-label="フッターナビゲーション">
       <ul class="p-footer__nav-list">
-        <li class="p-footer__nav-item"><a href="<?php echo esc_url(home_url("/")); ?>"<?php if (is_front_page()): ?>aria-current="page"<?php endif; ?>>ホーム</a></li>
-        <li class="p-footer__nav-item"><a href="<?php echo esc_url(get_permalink(get_page_by_path("about"))); ?>"<?php if (is_page("about")): ?>aria-current="page"<?php endif; ?>>TETOTEについて</a></li>
-        <li class="p-footer__nav-item"><a href="<?php echo esc_url(get_permalink(get_page_by_path("staff"))); ?>"<?php if (is_page("staff")): ?>aria-current="page"<?php endif; ?>>人を知る</a></li>
-        <li class="p-footer__nav-item"><a href="<?php echo esc_url(get_permalink(get_page_by_path("career"))); ?>"<?php if (is_page("career")): ?>aria-current="page"<?php endif; ?>>研修制度とキャリアパス</a></li>
-        <li class="p-footer__nav-item"><a href="<?php echo esc_url(get_permalink(get_page_by_path("benefits"))); ?>"<?php if (is_page("benefits")): ?>aria-current="page"<?php endif; ?>>福利厚生</a></li>
-        <li class="p-footer__nav-item"><a href="<?php echo esc_url(get_permalink(get_page_by_path("blog"))); ?>"<?php if (is_page("blog") || is_singular("post")): ?>aria-current="page"<?php endif; ?>>採用ブログ</a></li>
-        <li class="p-footer__nav-item"><a href="<?php echo esc_url(get_permalink(get_page_by_path("recruit"))); ?>"<?php if (is_page("recruit")): ?>aria-current="page"<?php endif; ?>>募集要項</a></li>
-        <li class="p-footer__nav-item"><a href="<?php echo esc_url(get_permalink(get_page_by_path("faq"))); ?>"<?php if (is_page("faq")): ?>aria-current="page"<?php endif; ?>>よくある質問</a></li>
-        <li class="p-footer__nav-item"><a href="<?php echo esc_url(get_permalink(get_page_by_path("company"))); ?>"<?php if (is_page("company")): ?>aria-current="page"<?php endif; ?>>会社概要</a></li>
+        <li class="p-footer__nav-item"><a href="<?php echo esc_url(home_url("/")); ?>"<?php if (is_front_page()): ?> aria-current="page"<?php endif; ?>>ホーム</a></li>
+        <li class="p-footer__nav-item"><a href="<?php echo esc_url(home_url("/about-us")); ?>"<?php if (is_page("about-us")): ?> aria-current="page"<?php endif; ?>>TETOTEについて</a></li>
+        <li class="p-footer__nav-item"><a href="<?php echo esc_url(home_url("/staff")); ?>"<?php if (is_page("staff")): ?> aria-current="page"<?php endif; ?>>人を知る</a></li>
+        <li class="p-footer__nav-item"><a href="<?php echo esc_url(home_url("/career")); ?>"<?php if (is_page("career")): ?> aria-current="page"<?php endif; ?>>研修制度とキャリアパス</a></li>
+        <li class="p-footer__nav-item"><a href="<?php echo esc_url(home_url("/benefits")); ?>"<?php if (is_page("benefits")): ?> aria-current="page"<?php endif; ?>>福利厚生</a></li>
+        <li class="p-footer__nav-item"><a href="<?php echo esc_url(home_url("/blog")); ?>"<?php if (is_page("blog") || is_singular("post")): ?> aria-current="page"<?php endif; ?>>採用ブログ</a></li>
+        <li class="p-footer__nav-item"><a href="<?php echo esc_url(home_url("/details")); ?>"<?php if (is_page("details")): ?> aria-current="page"<?php endif; ?>>募集要項</a></li>
+        <li class="p-footer__nav-item"><a href="<?php echo esc_url(home_url("/faq")); ?>"<?php if (is_page("faq")): ?> aria-current="page"<?php endif; ?>>よくある質問</a></li>
+        <li class="p-footer__nav-item"><a href="<?php echo esc_url(home_url("/about-us")); ?>"<?php if (is_page("/about-us")): ?> aria-current="page"<?php endif; ?>>会社概要</a></li>
       </ul>
     </nav>
     <div class="p-footer__bottom">

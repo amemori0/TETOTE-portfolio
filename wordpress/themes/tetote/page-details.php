@@ -11,12 +11,12 @@ get_header(); ?>
   'img_alt'    => '',
   'img_width'  => '1440',
   'img_height' => '339',
-  'en_title'   => 'Detail',
+  'en_title'   => 'Details',
   'ja_title'   => '募集要項',
   'lead'       => 'TETOTEは幅広く仲間を募集しています。',
 ]); ?>
 <?php get_template_part("template-parts/breadcrumb"); ?>
-<?php get_template_part("template-parts/detail"); ?>
+<?php get_template_part("template-parts/details"); ?>
 <?php get_template_part("template-parts/cta"); ?>
 </main>
 

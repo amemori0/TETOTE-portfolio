@@ -1,9 +1,9 @@
-<section class="p-detail">
+<section class="p-details">
   <div class="l-inner">
-    <h2 class="p-detail__title">あなたが輝ける場所が、ここにはある</h2>
-    <p class="p-detail__lead">TETOTEでは、コンサルタントを中心に、様々な職種を募集しています。</p>
+    <h2 class="p-details__title">あなたが輝ける場所が、ここにはある</h2>
+    <p class="p-details__lead">TETOTEでは、コンサルタントを中心に、様々な職種を募集しています。</p>
 
-    <div class="p-detail__button-wrap">
+    <div class="p-details__button-wrap">
       <a href="#consultant" class="c-button-outline">
         <span class="c-button-outline__text">コンサルタント</span>
         <svg class="c-button-outline__icon" aria-hidden="true" width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +26,7 @@
       </a>
     </div>
 
-      <h3 class="p-detail__sub-title">各種制度</h3>
+      <h3 class="p-details__sub-title">各種制度</h3>
       <dl class="c-company-list">
         <div class="c-company-list__row">
           <dt class="c-company-list__term">手当</dt>
@@ -66,8 +66,8 @@
         </div>
       </dl>
       
-      <div id="consultant" class="p-detail__block">
-        <h3 class="p-detail__sub-title">募集要項-コンサルタント</h3>
+      <div id="consultant" class="p-details__block">
+        <h3 class="p-details__sub-title">募集要項-コンサルタント</h3>
         <dl class="c-company-list">
           <div class="c-company-list__row">
             <dt class="c-company-list__term">職種名</dt>
@@ -112,8 +112,8 @@
         </dl>
       </div>
 
-      <div id="sales" class="p-detail__block">
-        <h3 class="p-detail__sub-title">募集要項-ソリューション営業</h3>
+      <div id="sales" class="p-details__block">
+        <h3 class="p-details__sub-title">募集要項-ソリューション営業</h3>
         <dl class="c-company-list">
           <div class="c-company-list__row">
             <dt class="c-company-list__term">職種名</dt>
@@ -158,8 +158,8 @@
         </dl>
       </div>
 
-      <div id="se" class="p-detail__block">
-        <h3 class="p-detail__sub-title">募集要項-システムエンジニア</h3>
+      <div id="se" class="p-details__block">
+        <h3 class="p-details__sub-title">募集要項-システムエンジニア</h3>
         <dl class="c-company-list">
           <div class="c-company-list__row">
             <dt class="c-company-list__term">職種名</dt>

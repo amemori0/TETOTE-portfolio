@@ -6,8 +6,8 @@
 <section class="p-mv">
   <div class="p-mv__inner">
   <div class="p-mv__img">
-    <img src="<?php echo esc_url(get_theme_file_uri("/assets/images/image_mv_01.webp")); ?>" alt="" width="1440" height="823" fetchpriority="high">
-    <img src="<?php echo esc_url(get_theme_file_uri("/assets/images/image_mv_02.webp")); ?>" alt="" width="1440" height="823">
+    <img src="<?php echo esc_url(get_theme_file_uri("/assets/images/image_mv_01.webp")); ?>" alt="スーツを着て屋外を爽やかに歩く若い男性ビジネスパーソン" width="1440" height="823" fetchpriority="high">
+    <img src="<?php echo esc_url(get_theme_file_uri("/assets/images/image_mv_02.webp")); ?>" alt="オフィスでノートパソコンを囲んで打ち合わせをするビジネスパーソン" width="1440" height="823">
   </div>
   <h1 class="p-mv__title">
     <span>Become a</span><br>

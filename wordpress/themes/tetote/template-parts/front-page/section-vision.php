@@ -14,7 +14,7 @@
     </p>
 
     <div class="p-top-vision__button-wrap">
-      <a href="<?php echo esc_url(home_url("/")); ?>" class="c-button-more">
+      <a href="<?php echo esc_url(home_url("/about-us")); ?>" class="c-button-more">
         <span class="c-button-more__text">View more</span>
         <span class="u-sr-only">About usページへ</span>
         <svg class="c-button-more__icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
