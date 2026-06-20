@@ -10,6 +10,7 @@
   aspect-ratio: 300 / 379;
   object-fit: cover;
   border-radius: 30px;
+  background: var(--color-white);
 }
 
 .c-staff-card__info {
@@ -54,6 +55,7 @@
   font-size: calc(16 * var(--to-rem));
   font-weight: var(--fw-bold);
   line-height: calc(100 / 100);
+  white-space: nowrap;
 }
 
 .c-staff-card__name {

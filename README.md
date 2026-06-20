@@ -26,13 +26,11 @@ Vite + FLOCSS + WordPress を使用したモダンなWordPressテーマ開発環
    ```**bash**
    yarn
    ```
-
 2. **Docker Desktopの起動**
 
    - [Docker Desktop](https://matsuand.github.io/docs.docker.jp.onthefly/get-docker/)をインストール
-   - Docker Desktopアプリを起動し、ステータスバーに`running`と表示されていることを確認
-   - **重要**: このプロジェクトは`@wordpress/env` 10を使用しており、**Docker Compose V2が必須**です
-
+   - Docker Desktopアプリを起動し、ステータスバーに `running`と表示されていることを確認
+   - **重要**: このプロジェクトは `@wordpress/env` 10を使用しており、**Docker Compose V2が必須**です
 3. **WordPress環境の起動**
 
    ```bash
@@ -42,7 +40,6 @@ Vite + FLOCSS + WordPress を使用したモダンなWordPressテーマ開発環
    - 初回はWordPressコアとプラグインのダウンロードに時間がかかります（5-10分程度）
    - 完了すると `http://localhost:8888` でWordPressにアクセスできます
    - **言語設定は自動的に日本語になります**（`.wp-env.json` の `WPLANG: "ja"` 設定により）
-
 4. **WordPress初期設定の適用**（初回のみ）
 
    ```bash
@@ -52,7 +49,6 @@ Vite + FLOCSS + WordPress を使用したモダンなWordPressテーマ開発環
    - タイムゾーン、パーマリンク、フロントページ、シード投稿を自動設定
    - **テーマの有効化も自動で実行されます**（手動操作不要）
    - 設定は `config/wp-options.json` でカスタマイズ可能
-
 5. **開発サーバーの起動**（別ターミナル）
 
    ```bash
@@ -61,7 +57,6 @@ Vite + FLOCSS + WordPress を使用したモダンなWordPressテーマ開発環
 
    - `http://localhost:5173` でVite開発サーバーが起動します
    - このサーバーは起動したままでOKです
-
 6. **WordPress管理画面にログイン**（初回のみ）
 
    - URL: `http://localhost:8888/wp-admin/`
@@ -82,7 +77,7 @@ Vite + FLOCSS + WordPress を使用したモダンなWordPressテーマ開発環
 
 - **Docker Desktop**: 必須（**最新版推奨**）
   - [インストール方法](https://www.docker.com/products/docker-desktop/)
-  - アプリを起動し、ステータスバーに`running`と表示されていることを確認
+  - アプリを起動し、ステータスバーに `running`と表示されていることを確認
   - **重要**: **Docker Compose V2が必要です**（Docker Desktop 4.4.2以降に標準で含まれています）
 
 ### Windows環境での動作について
@@ -90,12 +85,12 @@ Vite + FLOCSS + WordPress を使用したモダンなWordPressテーマ開発環
 このプロジェクトは**Windows環境でも正しく動作します**。
 
 - すべてのスクリプトはクロスプラットフォーム対応（Node.jsスクリプトを使用）
-- パスの扱いは`path.resolve`や`path.join`を使用しており、Windowsでも正しく動作
+- パスの扱いは `path.resolve`や `path.join`を使用しており、Windowsでも正しく動作
 - Docker DesktopはWindowsでも動作します
 
 **注意事項**:
 
-- Windows環境でも`yarn`コマンドを使用してください（`npm`は使用禁止）
+- Windows環境でも `yarn`コマンドを使用してください（`npm`は使用禁止）
 - PowerShell、コマンドプロンプト、Git Bashのいずれでも動作します
 
 ---
@@ -135,24 +130,20 @@ Vite + FLOCSS + WordPress を使用したモダンなWordPressテーマ開発環
    ```bash
    yarn wp-start
    ```
-
 2. **開発サーバーの起動**（別ターミナル）
 
    ```bash
    yarn dev
    ```
-
 3. **開発作業**
 
    - **フロントエンド**: `src/` フォルダ内でHTML/SCSS/JavaScriptを編集
    - **WordPressテーマ**: `wordpress/themes/{THEME_NAME}/` でPHP/テンプレートを編集
    - **コンテンツ**: WordPress管理画面（`http://localhost:8888/wp-admin/`）でコンテンツを作成
    - **確認**: `http://localhost:8888` で確認しながら開発
-
 4. **変更の反映**
 
    - SCSS/JavaScript/PHP: 自動的に反映されます（HMR対応）
-
 5. **終了時**
 
    ```bash
@@ -171,18 +162,18 @@ Vite + FLOCSS + WordPress を使用したモダンなWordPressテーマ開発環
 
 ## 開発コマンド一覧
 
-| 種別   | コマンド                          | 説明 |
-|--------|-----------------------------------|------|
-| 開発   | `yarn dev`                        | 開発サーバー起動（Vite + SCSS監視）→ `localhost:5173` |
-| ビルド | `yarn build:wp`                   | WordPress用ビルド → `wordpress/themes/{THEME_NAME}/` |
-| WP環境 | `yarn wp-start` / `yarn wp-stop`  | WordPress起動・停止 → `localhost:8888` |
-| WP環境 | `yarn wp-init`                    | WordPress初期設定（タイムゾーン・パーマリンク・フロントページ・シード投稿・**テーマ有効化**）。起動後に実行 |
-| WP環境 | `yarn wp-contents:export` / `import` | コンテンツのエクスポート・インポート |
-| WP環境 | `yarn update:wp-config`           | テーマ名・ディレクトリをプロジェクト名に合わせて更新 |
-| WP環境 | `yarn wp-post:create`              | 投稿の一括作成（`post-data/` のJSONファイルを使用） |
-| 品質   | `yarn format`                     | リント・フォーマット一括（自動修正） |
-| 品質   | `yarn format:check`               | チェックのみ |
-| 品質   | `yarn validate:acf`               | ACF-JSON のバリデーション |
+| 種別   | コマンド                                 | 説明                                                                                                              |
+| ------ | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| 開発   | `yarn dev`                             | 開発サーバー起動（Vite + SCSS監視）→`localhost:5173`                                                           |
+| ビルド | `yarn build:wp`                        | WordPress用ビルド →`wordpress/themes/{THEME_NAME}/`                                                            |
+| WP環境 | `yarn wp-start` / `yarn wp-stop`     | WordPress起動・停止 →`localhost:8888`                                                                          |
+| WP環境 | `yarn wp-init`                         | WordPress初期設定（タイムゾーン・パーマリンク・フロントページ・シード投稿・**テーマ有効化**）。起動後に実行 |
+| WP環境 | `yarn wp-contents:export` / `import` | コンテンツのエクスポート・インポート                                                                              |
+| WP環境 | `yarn update:wp-config`                | テーマ名・ディレクトリをプロジェクト名に合わせて更新                                                              |
+| WP環境 | `yarn wp-post:create`                  | 投稿の一括作成（`post-data/` のJSONファイルを使用）                                                             |
+| 品質   | `yarn format`                          | リント・フォーマット一括（自動修正）                                                                              |
+| 品質   | `yarn format:check`                    | チェックのみ                                                                                                      |
+| 品質   | `yarn validate:acf`                    | ACF-JSON のバリデーション                                                                                         |
 
 `update:wp-config` のオプション: `--wp-env` / `--style-css` / `--db`。詳細は [bin/README.md](./bin/README.md) を参照。
 
@@ -192,15 +183,15 @@ Vite + FLOCSS + WordPress を使用したモダンなWordPressテーマ開発環
 
 ## ガイドライン・ドキュメント
 
-| ドキュメント | 内容 |
-|--------------|------|
-| [doc/README.md](./doc/README.md) | doc 一覧・読み方 |
-| [doc/TEMPLATE_GUIDE.md](./doc/TEMPLATE_GUIDE.md) | テンプレート使い分け・パーツ構成 |
-| [doc/WORDPRESS_SETUP.md](./doc/WORDPRESS_SETUP.md) | WordPress 初期設定・プラグイン設定 |
-| [doc/ACF_GUIDE.md](./doc/ACF_GUIDE.md) | ACF（Advanced Custom Fields）設定 |
-| [doc/coding-guidelines.md](./doc/coding-guidelines.md) | コーディング規則 |
-| [doc/pr-issue-guidelines.md](./doc/pr-issue-guidelines.md) | PR・Issueガイドライン（任意） |
-| [bin/README.md](./bin/README.md) | スクリプト・プラグインの詳細 |
+| ドキュメント                                            | 内容                               |
+| ------------------------------------------------------- | ---------------------------------- |
+| [doc/README.md](./doc/README.md)                           | doc 一覧・読み方                   |
+| [doc/TEMPLATE_GUIDE.md](./doc/TEMPLATE_GUIDE.md)           | テンプレート使い分け・パーツ構成   |
+| [doc/WORDPRESS_SETUP.md](./doc/WORDPRESS_SETUP.md)         | WordPress 初期設定・プラグイン設定 |
+| [doc/ACF_GUIDE.md](./doc/ACF_GUIDE.md)                     | ACF（Advanced Custom Fields）設定  |
+| [doc/coding-guidelines.md](./doc/coding-guidelines.md)     | コーディング規則                   |
+| [doc/pr-issue-guidelines.md](./doc/pr-issue-guidelines.md) | PR・Issueガイドライン（任意）      |
+| [bin/README.md](./bin/README.md)                           | スクリプト・プラグインの詳細       |
 
 **説明動画**: [こちら](https://defiant-crow-3a6.notion.site/1cd5a20fea11451aa4c16f1490afeea8?pvs=4)
 
@@ -243,12 +234,13 @@ OGP・favicon は管理画面（外観→カスタマイズ / SEO Simple Pack）
 2. **URLチェック**（localhost/127.0.0.1のみ開発環境として扱う）
 
 **判定結果**:
-- `manifest.dev.json`が存在 かつ URLが`localhost` → 開発環境（Vite開発サーバーから読み込み）
+
+- `manifest.dev.json`が存在 かつ URLが `localhost` → 開発環境（Vite開発サーバーから読み込み）
 - それ以外 → 本番環境（ビルド済みファイルから読み込み）
 
 ### デプロイ前の準備
 
-**⚠️ 重要**: 本番環境にアップロードする前に、**必ず`manifest.dev.json`が存在しないことを確認してください**。このファイルが本番環境に残っていると、サイトが正しく動作しなくなります。
+**⚠️ 重要**: 本番環境にアップロードする前に、**必ず `manifest.dev.json`が存在しないことを確認してください**。このファイルが本番環境に残っていると、サイトが正しく動作しなくなります。
 
 ```bash
 # 1. ビルド実行（自動的にmanifest.dev.jsonが削除される）
@@ -291,14 +283,15 @@ yarn build:wp
 ### デプロイ後の確認事項
 
 1. **アセットが正しく読み込まれているか確認**
+
    - ブラウザの開発者ツールで、CSS/JSファイルが正しく読み込まれているか確認
    - ファイル名にハッシュが含まれていることを確認（例: `script.a1b2c3.js`）
-
 2. **キャッシュがクリアされているか確認**
+
    - ブラウザのキャッシュをクリアして再読み込み
    - ファイル名が変更されているため、自動的にキャッシュがクリアされる
-
 3. **エラーがないか確認**
+
    - ブラウザのコンソールでエラーがないか確認
    - WordPressのデバッグログを確認（`WP_DEBUG`が有効な場合）
 
@@ -306,8 +299,8 @@ yarn build:wp
 
 本テンプレートは以下のセキュリティ対策を実装しています：
 
-- **`.gitignore`で除外**: `manifest.dev.json`と`.vite/`をGit管理外に
-- **ビルド時の自動クリーンアップ**: `yarn build:wp`実行時に`manifest.dev.json`が自動削除される
+- **`.gitignore`で除外**: `manifest.dev.json`と `.vite/`をGit管理外に
+- **ビルド時の自動クリーンアップ**: `yarn build:wp`実行時に `manifest.dev.json`が自動削除される
 - **URLチェック**: localhost/127.0.0.1のみ開発環境として扱う（FTP誤アップロード対策）
 
 これにより、どのデプロイ方法でも安全に運用できます。
@@ -318,45 +311,48 @@ yarn build:wp
 
 ### Node.jsのバージョンエラー
 
-**症状**: `yarn`や`yarn dev`を実行するとNode.jsのバージョンエラーが出る
+**症状**: `yarn`や `yarn dev`を実行するとNode.jsのバージョンエラーが出る
 
 **解決方法**:
 
 1. Node.jsのバージョンを確認: `node --version`
 2. Node.js v20.19.0以上が必要です（推奨: v22.12.0以上）
 3. [Node.js公式サイト](https://nodejs.org/)から最新のLTS版をインストール
-4. インストール後、ターミナルを再起動してから再度`yarn`を実行
+4. インストール後、ターミナルを再起動してから再度 `yarn`を実行
 
 ### Docker Compose V2が必要です
 
-**症状**: `yarn wp-start`を実行すると`docker-compose`コマンドが見つからない、またはエラーが出る
+**症状**: `yarn wp-start`を実行すると `docker-compose`コマンドが見つからない、またはエラーが出る
 
-**原因**: このプロジェクトは`@wordpress/env` 10を使用しており、Docker Compose V2が必要です。Docker Compose V1は2023年7月に更新が停止され、現在はサポートされていません。
+**原因**: このプロジェクトは `@wordpress/env` 10を使用しており、Docker Compose V2が必要です。Docker Compose V1は2023年7月に更新が停止され、現在はサポートされていません。
 
 **解決方法**:
 
 1. **Docker Desktopを最新版にアップデート**
+
    - [Docker Desktop公式サイト](https://www.docker.com/products/docker-desktop/)から最新版をダウンロード・インストール
    - Docker Desktop 4.4.2以降には、Docker Compose V2が標準で含まれています
    - インストール後、Docker Desktopを再起動してください
-
 2. **Docker Compose V2がインストールされているか確認**
+
    ```bash
    docker compose version
    ```
+
    - 正常に動作する場合: `Docker Compose version v2.x.x` と表示されます
    - エラーが出る場合: Docker Desktopを最新版にアップデートしてください
-
 3. **注意事項**
-   - Docker Compose V2では、コマンドが`docker-compose`（ハイフンあり）から`docker compose`（スペース区切り）に変更されました
-   - ただし、Docker Desktop 4.4.2以降では、`docker-compose`コマンドが自動的に`docker compose`にエイリアスされるため、既存のスクリプトでも動作します
-   - `@wordpress/env`は内部で`docker compose`コマンドを使用するため、特に設定変更は不要です
+
+   - Docker Compose V2では、コマンドが `docker-compose`（ハイフンあり）から `docker compose`（スペース区切り）に変更されました
+   - ただし、Docker Desktop 4.4.2以降では、`docker-compose`コマンドが自動的に `docker compose`にエイリアスされるため、既存のスクリプトでも動作します
+   - `@wordpress/env`は内部で `docker compose`コマンドを使用するため、特に設定変更は不要です
 
 ### WordPress環境が起動しない
 
 **症状**: `yarn wp-start`を実行してもエラーが出る
 
 **エラーメッセージ例**:
+
 ```
 ✖ Error while running docker compose command.
 unable to get image 'mariadb:lts': Cannot connect to the Docker daemon at unix:///Users/.../.docker/run/docker.sock. Is the docker daemon running?
@@ -365,36 +361,36 @@ unable to get image 'mariadb:lts': Cannot connect to the Docker daemon at unix:/
 **解決方法**:
 
 1. **Docker Desktopが起動しているか確認**
+
    - Docker Desktopアプリを起動してください
-   - ステータスバー（Mac）またはタスクトレイ（Windows）に`running`と表示されていることを確認
-   - 起動していない場合は、Docker Desktopアプリを起動してから数秒待ってから再度`yarn wp-start`を実行
-
+   - ステータスバー（Mac）またはタスクトレイ（Windows）に `running`と表示されていることを確認
+   - 起動していない場合は、Docker Desktopアプリを起動してから数秒待ってから再度 `yarn wp-start`を実行
 2. **Docker Compose V2がインストールされているか確認**（上記の「Docker Compose V2が必要です」を参照）
-
 3. **ポート8888が使用されていないか確認**
+
    ```bash
    # Mac/Linux
    lsof -i :8888
-   
+
    # Windows (PowerShell)
    netstat -ano | findstr :8888
    ```
-   - 他のプロセスが使用している場合は、そのプロセスを停止するか、`yarn wp-stop`を実行
 
+   - 他のプロセスが使用している場合は、そのプロセスを停止するか、`yarn wp-stop`を実行
 4. **Windows環境での特別な対処法**
-   - `yarn wp-start`が正しく動作しない場合、`.wp-env.json`の`plugins`配列を一時的に削除して再実行してみてください
+
+   - `yarn wp-start`が正しく動作しない場合、`.wp-env.json`の `plugins`配列を一時的に削除して再実行してみてください
    - 手順：
      1. `.wp-env.json`を開く
-     2. `"plugins": [...]`の部分を削除または空配列`[]`に変更
+     2. `"plugins": [...]`の部分を削除または空配列 `[]`に変更
      3. `yarn wp-start`を実行
      4. 起動に成功したら、必要に応じてプラグイン設定を戻す
    - これはWindows環境でのDocker Compose実行時の問題によるものです
-
-5. **一度`yarn wp-stop`を実行してから、再度`yarn wp-start`を実行**
-
+5. **一度 `yarn wp-stop`を実行してから、再度 `yarn wp-start`を実行**
 6. **それでも解決しない場合**
+
    - Docker Desktopを再起動
-   - `yarn wp-stop`を実行してから、Docker Desktopを再起動し、再度`yarn wp-start`を実行
+   - `yarn wp-stop`を実行してから、Docker Desktopを再起動し、再度 `yarn wp-start`を実行
 
 ### wp-initが失敗する
 
@@ -403,18 +399,21 @@ unable to get image 'mariadb:lts': Cannot connect to the Docker daemon at unix:/
 **解決方法**:
 
 1. **WordPress環境が起動しているか確認**
+
    ```bash
    yarn wp-start
    ```
-   - 起動に時間がかかる場合があります（初回は5-10分程度）
 
+   - 起動に時間がかかる場合があります（初回は5-10分程度）
 2. **少し待ってから再実行**
+
    ```bash
    yarn wp-init
    ```
-   - 初回起動時は時間がかかる場合があります
 
+   - 初回起動時は時間がかかる場合があります
 3. **それでも失敗する場合**
+
    - Docker Desktopを再起動
    - `yarn wp-stop` → `yarn wp-start` を再度実行
    - 数分待ってから `yarn wp-init` を再実行
@@ -449,8 +448,8 @@ unable to get image 'mariadb:lts': Cannot connect to the Docker daemon at unix:/
 1. **監視対象の確認**: `vite.config.js` で監視対象が正しく設定されているか確認
    - ルートPHPファイル（`*.php`）
    - テンプレートパーツ（`template-parts/**/*.php`）
-   - 機能別関数ファイル（`functions-lib/**/*.php`、ただし`functions-lib/lib/`は除外）
-2. **パフォーマンス改善**: 
+   - 機能別関数ファイル（`functions-lib/**/*.php`、ただし `functions-lib/lib/`は除外）
+2. **パフォーマンス改善**:
    - ライブラリファイル（`functions-lib/lib/`）は監視対象外のため、変更してもリロードされません。必要に応じて手動リロードしてください
    - 監視対象を絞ることで、ファイル変更の検知が高速化されます
 3. **キャッシュクリアと再起動**:
@@ -475,7 +474,7 @@ unable to get image 'mariadb:lts': Cannot connect to the Docker daemon at unix:/
 **解決方法**:
 
 1. 画像の配置場所を確認: `src/assets/images/`
-2. WordPress開発時は、PHPから画像を読み込む場合は`img_path()`関数を使用
+2. WordPress開発時は、PHPから画像を読み込む場合は `img_path()`関数を使用
 3. ビルド後に画像が出力されているか確認（`wordpress/themes/{THEME_NAME}/assets/images/`）
 
 ### プラグインがインストールされない
@@ -484,7 +483,7 @@ unable to get image 'mariadb:lts': Cannot connect to the Docker daemon at unix:/
 
 **解決方法**:
 
-1. `.wp-env.json`の`plugins`配列を確認
+1. `.wp-env.json`の `plugins`配列を確認
 2. プラグインのURLが正しいか確認
 3. 初回起動時はプラグインのダウンロードに時間がかかります（5-10分程度）
 4. ネットワーク接続を確認
@@ -502,13 +501,11 @@ unable to get image 'mariadb:lts': Cannot connect to the Docker daemon at unix:/
    ```bash
    yarn
    ```
-
 2. **開発サーバーの起動**
 
    ```bash
    yarn dev
    ```
-
 3. **ブラウザで確認**: `http://localhost:5173` にアクセス
 
 詳細は各ドキュメントを参照してください。
@@ -520,11 +517,13 @@ unable to get image 'mariadb:lts': Cannot connect to the Docker daemon at unix:/
 このプロジェクトのライセンスについては、[LICENSE](./LICENSE) ファイルを参照してください。
 
 **概要:**
+
 - 個人・法人での実案件使用は許可
 - 改変・カスタマイズは自由
 - 成果物の商用利用は許可
 - テンプレート自体の再配布・再販売は禁止
 
 詳細は [LICENSE](./LICENSE) ファイルをご確認ください。
-#   T E T O T E - p o r t f o l i o  
- 
+#� �T�E�T�O�T�E�-�p�o�r�t�f�o�l�i�o�
+�
+�

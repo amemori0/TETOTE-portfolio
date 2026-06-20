@@ -100,10 +100,14 @@ add_filter(
       }
     }
 
+    if (is_array($type) && in_array("post-staff-archive", $type, true)) {
+      return "staff";
+    }
+
     return $title;
   },
   10,
-  3,
+  3
 );
 
 /**

@@ -2,7 +2,7 @@
 
 .p-top-benefits {
   container-type: inline-size;
-  padding-block: clamp(1.5rem, 0.114rem + 5.92vi, 5.438rem) clamp(4.875rem, 4.237rem + 2.72vw, 6.688rem);
+  padding-block: clamp(1.5rem, 0.114rem + 5.92vi, 5.438rem) clamp(4.885rem, 4.237rem + 2.72vw, 6.688rem);
 }
 
 .p-top-benefits__text {
@@ -27,7 +27,7 @@
   gap: var(--_gap);
   margin-block-start: calc(114 * var(--to-rem) + var(--leading-trim));
 
-  @include mq(md) {
+  @media (max-width: 880px) {
     --_columns: 1;
     row-gap: calc(36 * var(--to-rem));
     margin-block-start: calc(51 * var(--to-rem) + var(--leading-trim));
@@ -90,8 +90,12 @@
   writing-mode: vertical-rl;
   font-feature-settings: "palt";
 
-  @media (max-width: 850px) {
+  @media (max-width: 880px) {
     right: calc(13 * var(--to-rem));
+  }
+
+  @media (max-width: 390px) {
+    top: calc(-40 * var(--to-rem));
   }
 }
 
@@ -129,7 +133,7 @@
     }
   }
 
-  @media (max-width: 850px) {
+  @media (max-width: 880px) {
     bottom: calc(39 * var(--to-rem));
     right: calc(13 * var(--to-rem));
   }
@@ -147,7 +151,7 @@
   line-height: calc(100 / 100);
   white-space: nowrap;
 
-  @include mq(md) {
+  @media (max-width: 880px) {
     bottom: calc(-15 * var(--to-rem));
   }
 }

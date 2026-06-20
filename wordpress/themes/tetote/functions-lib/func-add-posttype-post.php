@@ -35,15 +35,15 @@ add_action("init", "change_post_labels");
 add_action("admin_menu", "change_post_menu_labels");
 
 
-function enable_post_archive_with_slug($args, $post_type)
+/* function enable_post_archive_with_slug($args, $post_type)
 {
   if ($post_type === "post") {
     $args["has_archive"] = true;
     $args["rewrite"] = [
-      "slug" => "staff",
+      "slug" => "blog",
       "with_front" => false,
     ];
   }
   return $args;
 }
-add_filter("register_post_type_args", "enable_post_archive_with_slug", 10, 2); 
+add_filter("register_post_type_args", "enable_post_archive_with_slug", 10, 2);  */

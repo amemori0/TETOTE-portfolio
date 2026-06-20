@@ -1,6 +1,7 @@
 @use "../global" as *;
 
 .p-hero {
+  background: var(--color-white); //画像がもし配置されなかった場合でもテキストが読めるようにするため
 }
 
 .p-hero__inner {

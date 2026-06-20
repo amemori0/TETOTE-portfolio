@@ -24,7 +24,7 @@
       </li>
 
     <li class="p-top-benefits__item">
-        <a href="<?php echo esc_url(home_url("benefits")); ?>" class="p-top-benefits__link">
+        <a href="<?php echo esc_url(home_url("/benefits")); ?>" class="p-top-benefits__link">
           <div class="p-top-benefits__img">
             <?php include get_theme_file_path('/assets/images/image_welfare.svg'); ?>
           </div>
