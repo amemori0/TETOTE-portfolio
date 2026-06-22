@@ -100,42 +100,24 @@
 }
 
 .p-top-benefits__icon {
+  --_size: 58px;
+  width: var(--_size);
+  height: auto;
+
   position: absolute;
   bottom: calc(66 * var(--to-rem));
   right: calc(20 * var(--to-rem));
-
-  circle,
-  path {
-    transition:
-      fill var(--duration) var(--ease-out-quart),
-      stroke var(--duration) var(--ease-out-quart);
-  }
-
-  &:focus-visible {
-    circle {
-      fill: var(--color-white);
-      stroke: var(--color-black);
-    }
-    path {
-      fill: var(--color-black);
-    }
-  }
-
-  @media (any-hover: hover) {
-    &:hover {
-      circle {
-        fill: var(--color-white);
-        stroke: var(--color-black);
-      }
-      path {
-        fill: var(--color-black);
-      }
-    }
-  }
+  transition: width var(--duration) var(--ease-out-cubic);
 
   @media (max-width: 880px) {
     bottom: calc(39 * var(--to-rem));
     right: calc(13 * var(--to-rem));
+  }
+  
+  @media (any-hover: hover) {
+    &:hover {
+      --_size: 70px;
+    }
   }
 }
 

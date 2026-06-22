@@ -1,6 +1,7 @@
 @use "../global" as *;
 
 .p-blog-detail {
+  container-type: inline-size;
   width: min(calc(800 * var(--to-rem)), 100%);
   margin-inline: auto;
   padding-block: calc(41 * var(--to-rem)) calc(23 * var(--to-rem));

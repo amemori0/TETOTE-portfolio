@@ -5,11 +5,6 @@
   --_padding-x: calc(30 * var(--to-rem));
   --_icon-size: 20px;
 
-  @include mq(md) {
-    --_padding-y: calc(33 * var(--to-rem));
-    --_padding-x: calc(20 * var(--to-rem));
-  }
-  
   display: inline-grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
@@ -22,6 +17,11 @@
 
   &::before {
     content: "";
+  }
+
+  @include mq(md) {
+    --_padding-y: calc(33 * var(--to-rem));
+    --_padding-x: calc(20 * var(--to-rem));
   }
 }
 

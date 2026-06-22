@@ -37,7 +37,7 @@
 }
 .p-service__item {
   display: grid;
-  grid-template-columns: calc(457 * var(--to-rem)) minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: calc(47 * var(--to-rem));
 
   padding-block-end: calc(49 * var(--to-rem));

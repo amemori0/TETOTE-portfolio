@@ -31,3 +31,7 @@ get_template_part("functions-lib/func-add-posttype-post");
 
 // 構造化データの設定（汎用化済み）
 get_template_part("functions-lib/func-structured-data");
+
+// staff個別ページのSEOタイトル・ディスクリプション
+get_template_part("functions-lib/func-seo-staff");
+

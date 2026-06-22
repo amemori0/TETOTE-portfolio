@@ -1,6 +1,7 @@
 @use "../global" as *;
 
 .p-voice {
+  container-type: inline-size;
   padding-block-start: clamp(3.75rem, 2.254rem + 6.38vi, 8rem);
   padding-block-end: clamp(3.125rem, 1.166rem + 8.36vi, 8.688rem);
 }

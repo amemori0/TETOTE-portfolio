@@ -15,7 +15,8 @@
         "https://downloads.wordpress.org/plugin/breadcrumb-navxt.zip",
         "https://downloads.wordpress.org/plugin/contact-form-7.zip",
         "https://downloads.wordpress.org/plugin/custom-post-type-ui.zip",
-        "https://downloads.wordpress.org/plugin/contact-form-7-multi-step-module.zip"
+        "https://downloads.wordpress.org/plugin/contact-form-7-multi-step-module.zip",
+        "https://downloads.wordpress.org/plugin/xml-sitemap-feed.zip"
     ],
     "mappings": {
         "wp-content/uploads": "./wordpress/uploads",

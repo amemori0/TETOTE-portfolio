@@ -9,7 +9,7 @@
       <div class="p-staff-detail__meta">
         <p class="p-staff-detail__occupation"><?php the_field("staff_category"); ?></p>
         <div class="p-staff-detail__name-wrap">
-          <h1 class="p-staff-detail__name"><?php the_title(); ?></h1>
+          <span class="p-staff-detail__name"><?php the_title(); ?></span>
           <span class="p-staff-detail__year"><?php the_field("staff_joining_year"); ?></span>
         </div>
       </div>

@@ -1,6 +1,7 @@
 @use "../global" as *;
 
 .p-archive-blog {
+  container-type: inline-size;
   padding-block: clamp(5rem, 3.9rem + 4.69vi, 8.125rem);
 }
 

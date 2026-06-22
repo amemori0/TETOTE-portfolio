@@ -1,6 +1,7 @@
 @use "../global" as *;
 
 .p-training-system {
+  container-type: inline-size;
   padding-block-start: clamp(4.375rem, 2.724rem + 7.04vi, 9.063rem);
   padding-block-end: clamp(5rem, 2.887rem + 9.01vi, 11rem);
 }
@@ -57,7 +58,7 @@
   row-gap: calc(50 * var(--to-rem));
 
   @include mq(md) {
-    row-gap: 30;
+    row-gap: calc(30 * var(--to-rem));
   }
 }
 .p-training-system__item-title {

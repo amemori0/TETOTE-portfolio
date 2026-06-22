@@ -5,7 +5,8 @@
   --_padding-y-top-max: 2.063rem;
   --_padding-y-bottom-min: 2.125rem;
   --_padding-y-bottom-max: 3.563rem;
-
+  
+  container-type: inline-size;
   padding-block-start: clamp(var(--_padding-y-top-min), 0.964rem + 1.22vi, var(--_padding-y-top-max));
   padding-block-end: clamp(var(--_padding-y-bottom-min), 1.619rem + 2.16vi, var(--_padding-y-bottom-max));
   background: var(--color-off-white);

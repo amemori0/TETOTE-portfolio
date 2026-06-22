@@ -1,6 +1,7 @@
 @use "../global" as *;
 
 .p-message {
+  container-type: inline-size;
   padding-block-start: clamp(4.5rem, 3.334rem + 4.98vi, 7.813rem);
 }
 
@@ -13,7 +14,7 @@
 }
 .p-message__body {
   display: grid;
-  grid-template-columns: calc(484 * var(--to-rem)) minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: calc(17 * var(--to-rem));
   margin-block-start: calc(109 * var(--to-rem) + var(--leading-trim));
 

@@ -1,6 +1,7 @@
 @use "../global" as *;
 
 .p-staff-detail {
+  container-type: inline-size;
   background: var(--color-off-white);
 }
 

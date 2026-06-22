@@ -10,9 +10,9 @@
   @include mq(md) {
     padding-block-start: calc(54 * var(--to-rem));
   }
-  
+
   /* トップページのブログは白 */
-   .p-blog__content {
+  .p-blog__content {
     background: var(--color-white);
   }
 }
@@ -39,48 +39,23 @@
   display: flex;
   align-items: center;
   column-gap: calc(13 * var(--to-rem));
-
-  &:focus-visible {
-    .p-top-blog__link-icon {
-      circle {
-        fill: var(--color-black);
-        stroke: var(--color-black);
-      }
-      path {
-        fill: var(--color-white);
-      }
-    }
-
-    @include mq(md) {
-      column-gap: calc(4 * var(--to-rem));
-    }
-  }
-
-  @media (any-hover: hover) {
-    &:hover {
-      .p-top-blog__link-icon {
-        circle {
-          fill: var(--color-black);
-          stroke: var(--color-black);
-        }
-        path {
-          fill: var(--color-white);
-        }
-      }
-    }
-  }
 }
+
 .p-top-blog__link-icon {
   --_size: calc(58 * var(--to-rem));
 
   width: var(--_size);
   height: auto;
+  transition: width var(--duration) var(--ease-out-cubic);
 
-  circle,
-  path {
-    transition:
-      fill var(--duration) var(--ease-out-cubic),
-      stroke var(--duration) var(--ease-out-cubic);
+  &:focus-visible {
+    --_size: 70px;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      --_size: 70px;
+    }
   }
 }
 

@@ -1,6 +1,7 @@
 @use "../global" as *;
 
 .p-top-staff {
+  container-type: inline-size;
   padding-block: clamp(4.438rem, 4.349rem + 0.38vi, 4.688rem);
   overflow: hidden; //ページ全体の横スクロール（X軸の揺れ）を完全に防ぐ
 }
@@ -22,7 +23,7 @@
 
 .p-top-staff__swiper {
   overflow: visible;
-  clip-path: inset(0% -50vw -100px 0%); // 右: 画面端まで拡張 / 下: 装飾の見切れ防止
+  clip-path: inset(-10px -50vw -100px 0%);
 }
 
 .p-top-staff__swiper-wrapper {
@@ -68,13 +69,7 @@
 
   width: var(--_size);
   height: auto;
-
-  circle,
-  path {
-    transition:
-      fill var(--duration) var(--ease-out-cubic),
-      stroke var(--duration) var(--ease-out-cubic);
-  }
+  transition: width var(--duration) var(--ease-out-cubic);
 
   &.swiper-button-disabled {
     opacity: 0.3;
@@ -82,24 +77,12 @@
   }
 
   &:focus-visible {
-    circle {
-      fill: var(--color-black);
-      stroke: var(--color-black);
-    }
-    path {
-      fill: var(--color-white);
-    }
+    --_size: 70px;
   }
 
   @media (any-hover: hover) {
     &:hover {
-      circle {
-        fill: var(--color-black);
-        stroke: var(--color-black);
-      }
-      path {
-        fill: var(--color-white);
-      }
+      --_size: 70px;
     }
   }
 }
