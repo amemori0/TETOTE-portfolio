@@ -1,4 +1,8 @@
 <?php
+
+if (!defined("ABSPATH")) {
+    exit; // 直接アクセス禁止
+}
 /**
  * staff（個別ページ）のSEOタイトル・ディスクリプション
  *
