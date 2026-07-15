@@ -1,5 +1,7 @@
 # TETOTE 採用特設サイト
 
+![TETOTE 採用特設サイト トップページ](doc/screenshot/screenshot-top.png)
+
 ## プロジェクト概要
 
 - **サイト名**：採用特設サイト｜株式会社TETOTE
