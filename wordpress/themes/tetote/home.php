@@ -19,7 +19,8 @@ get_header(); ?>
 
   <div class="p-archive-blog">
     <div class="l-inner">
-      <?php get_template_part("template-parts/archive/blog-list"); ?> 
+      <h2 class="u-sr-only">採用ブログ記事一覧</h2>
+      <?php get_template_part("template-parts/archive/blog-list"); ?>
 
       <div class="p-archive-blog-button-wrap">
         <?php get_template_part("template-parts/pagination"); ?>

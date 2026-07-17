@@ -152,7 +152,7 @@
 
 #### お問い合わせフォームの `field-sizing: content`
 
-- **実装**：`textarea` に `field-sizing: content` を指定し、対応ブラウザでは `resize` を無効化するフォールバックを併記しています（`_p-entry.scss:379-383`、`foundation/_base.scss:79-81`）。
+- **実装**：`textarea` に `field-sizing: content` を指定し、対応ブラウザでのみ `resize` を無効化する `@supports` 分岐を併記しています（未対応ブラウザでは従来の手動リサイズが残ります。`_p-entry.scss:379-383`、`foundation/_base.scss:79-81`）。
 
   ```scss
   .p-entry__textarea {
@@ -196,11 +196,14 @@
 - **実装**：ブログ一覧ページで、h1（ページタイトル）とカードタイトル（h3）の間に、視覚的に非表示のh2を `u-sr-only` で挿入しています。
 
   ```html
-  <h1 class="p-archive-blog">BLOG</h1>
+  <!-- hero.php — ページタイトル -->
+  <h1 class="p-hero__en-title">Blog</h1>
+
+  <!-- home.php — 視覚的に非表示のh2で階層を埋める -->
   <h2 class="u-sr-only">採用ブログ記事一覧</h2>
-  <article>
-    <h3 class="c-card__title">...</h3>
-  </article>
+
+  <!-- blog-list.php — カードタイトル -->
+  <h3 class="p-blog__title">記事タイトル</h3>
   ```
 
 - **理由**：スクリーンリーダーの見出しジャンプは文書全体のh1〜h6を順に辿るため、デザイン上h2に相当する見た目が無くても、レベルの飛び越え（h1→h3）は避けるべきと判断しました。
