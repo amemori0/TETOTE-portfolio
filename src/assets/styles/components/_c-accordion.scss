@@ -1,11 +1,14 @@
 @use "../global" as *;
 
+.c-accordion {
+  border-block-end: 1px solid var(--color-secondary);
+}
+
 .c-accordion__item {
   --_q-gap: calc(20 * var(--to-rem));
   --_q-fs: calc(24 * var(--to-rem));
 
   border-block-start: 1px solid var(--color-secondary);
-  border-block-end: 1px solid var(--color-secondary);
 }
 
 .c-accordion__summary {
